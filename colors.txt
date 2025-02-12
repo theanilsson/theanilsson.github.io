@@ -22,9 +22,6 @@ Pink
 Teal
 #72FFFF
 
-<iframe frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Intergalactic Ball Throwing Championship With Friends ツ Trailer" width="100%" height="100%" src="https://www.youtube.com/embed/O_JdYov6Ee0?autoplay=0&amp;mute=0&amp;controls=1&amp;loop=0&amp;origin=https%3A%2F%2Fwww.danielrosen.dev&amp;playsinline=1&amp;enablejsapi=1&amp;widgetid=1" id="widget2"></iframe>
-https://www.youtube.com/embed/v_fB_EsUTx8?autoplay=0&amp;mute=0&amp;controls=1&amp;loop=0&amp;playsinline=1&amp;enablejsapi=1&amp;widgetid=1
-
 P6
 v_fB_EsUTx8
 
