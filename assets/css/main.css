@@ -1,12 +1,6 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic");
 
-/*
-	Alpha by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 /* Reset */
 
 /* Based on meyerweb.com/eric/tools/css/reset (v2.0 | 20110126 | License: public domain) */
@@ -2060,7 +2054,6 @@
 
 		header.major p {
 			display: inline-block;
-			/* border-top: solid 2px #FF7FE8; */
 			color: #cfcfcf;
 			margin: 0 0 0 0;
 			padding: 1.0em 0 0 0;
@@ -2823,17 +2816,18 @@
 		input[type="reset"].alt,
 		input[type="button"].alt,
 		.button.alt {
-			background-color: #cfcfcf;
-			box-shadow: inset 0 0 0 2px #FF7FE8;
-			color: #3f3f3f;
+			background-color: #3f3f3f;
+			box-shadow: inset 0 0 0 2px #757575;
+			color: #fff;
 		}
 
 			input[type="submit"].alt:hover,
 			input[type="reset"].alt:hover,
 			input[type="button"].alt:hover,
 			.button.alt:hover {
+				box-shadow: inset 0 0 0 2px #cfcfcf;
 				background-color: #757575;
-				color: #FFC500;
+				color: #FFF;
 			}
 
 			input[type="submit"].alt:active,
@@ -3172,7 +3166,6 @@
 	#banner {
 		background-attachment: scroll,							fixed;
 		background-color: #231B3B;
-		/* background-image: url("images/overlay.png"), url("../../images/banner.jpg"); */
 		background-position: top left,						center center;
 		background-repeat: repeat,							no-repeat;
 		background-size: auto,							cover;
@@ -3439,7 +3432,9 @@
 /* Narrower */
 
 	#navPanel, #navButton {
-		display: none;
+		display: none;    
+		text-wrap-mode: nowrap;
+		font-size: smaller;
 	}
 
 	@media screen and (max-width: 840px) {
