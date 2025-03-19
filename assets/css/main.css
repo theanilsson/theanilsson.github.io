@@ -293,12 +293,46 @@
 		display: none;
 	  }
 	  
-	  #projects-show:target {
-		display: block;
-		padding-top: 30em;
-    	margin-top: -36em;
-		background-color: #5e3cbd;
-	  }
+	#projects-show:target {
+	display: block;
+	padding-top: 30em;
+	margin-top: -36em;
+	background-color: #5e3cbd;
+	}
+
+	.hover_img a { 
+		position: relative; 
+		color: #cfcfcf; 
+		border-bottom: none; 
+		cursor: default; 
+	}
+	.hover_img a span { 
+		position: absolute; 
+		display: none; 
+		z-index: 99; 
+	}
+	.hover_img a div { 
+		position: absolute; 
+		display: none; 
+		z-index: 99; 
+	}
+	.hover_img a:hover { 
+		color: #FF7FE8; 
+	}
+	.hover_img a:hover span { 
+		display: block; 
+		padding-left: 15em; 
+	}
+	.hover_img a:hover div { 
+		display: inline; 
+		margin-left: -7em;
+		padding-top: 19em;
+	}
+	
+	.hover_img_link a:hover { 
+		border-bottom: solid 1px !important; 
+		cursor: pointer !important;
+	}
 
 /* Row */
 
@@ -3516,7 +3550,7 @@
 /* Narrower */
 
 	#navPanel, #navButton {
-		display: none;    
+		display: none;
 		text-wrap-mode: nowrap;
 		font-size: smaller;
 	}
