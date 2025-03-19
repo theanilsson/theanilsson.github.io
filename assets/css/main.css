@@ -249,6 +249,57 @@
 		text-align: right;
 	}
 
+	.cardheader {
+		text-align: left; 
+		color: #FFC500; 
+		margin-bottom: 0.25em;
+	}
+
+	.carddetails {
+		text-align: left; 
+		list-style: none; 
+		padding: 0 0 0 0; 
+		margin-bottom: 1em;
+	}
+	.carddetails > li {
+		padding-left: 0.1em;
+	}
+	.carddetails > li > div {
+		display: inline; 
+		color: #FF7FE8;
+	}
+
+	.cardsubheader {
+		display: flex; 
+		color: #FFC500;
+	}
+
+	.cardbulletlist {
+		text-align: left; 
+		list-style: disc; 
+		margin-bottom: 0; 
+		margin-left: 0.25em;
+	}
+
+	a.showhidden {
+		background-color: #231B3B !important;
+		color: #5e3cbd !important;
+	} 
+	a.showhidden:hover {
+		color: #cfcfcf !important;
+	} 
+
+	#projects-show {
+		display: none;
+	  }
+	  
+	  #projects-show:target {
+		display: block;
+		padding-top: 30em;
+    	margin-top: -36em;
+		background-color: #5e3cbd;
+	  }
+
 /* Row */
 
 	.row {
@@ -2334,6 +2385,11 @@
 		.box.special.frontpage {
 			margin: 0 0 0 0;
 			padding: 2em;
+			height: calc(91%);
+		}
+		
+		.box.special.projectspage {
+			margin: 0 0 0 0;
 			height: calc(91%);
 		}
 		
