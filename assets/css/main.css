@@ -321,7 +321,7 @@
 	}
 	.hover_img a:hover span { 
 		display: block; 
-		margin-left: 15em; 
+		/* margin-left: 15em;  */
 	}
 	.hover_img a:hover div { 
 		display: inline; 
