@@ -333,6 +333,13 @@
 		cursor: pointer !important;
 	}
 
+	.frontpageanchor {
+		color: inherit;
+	}
+	.frontpageanchor:hover {
+		text-decoration: underline #FFC500 !important;
+	}
+
 /* Row */
 
 	.row {
