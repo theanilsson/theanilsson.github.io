@@ -1459,6 +1459,14 @@
 					margin-bottom: 1em;
 				}
 
+				.row > .col-12-narrower.projectsleftcard {
+					margin-bottom: 3em;
+				}
+
+				.row > .col-12-narrower.projectsrightcard {
+					margin-bottom: 0.75em;
+				}
+
 				.row > .off-12-narrower {
 					margin-left: 100%;
 				}
