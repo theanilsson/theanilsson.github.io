@@ -2414,6 +2414,7 @@
 
 		.box.special {
 			text-align: center;
+			overflow: visible;
 		}
 		
 		.box.special.frontpage {
