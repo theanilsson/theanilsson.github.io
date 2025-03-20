@@ -320,12 +320,11 @@
 		color: #FF7FE8; 
 	}
 	.hover_img a:hover span { 
-		display: block; 
-		/* margin-left: 15em;  */
+		display: block;
+		position: absolute; 
 	}
 	.hover_img a:hover div { 
 		display: inline; 
-		margin-left: -7em;
 		padding-top: 19em;
 	}
 	
