@@ -50,23 +50,60 @@
 				</section>
 
 			<!-- Main -->
-				<section id="main" class="container" style="width: calc(100% - 5em); padding-top: 1em; padding-bottom: 0em;">
-					<section class="box special headline" style="justify-self: center; max-width: -webkit-fill-available;">
-						<header class="major" style="padding-bottom: 0;">
-							<h2>Deferred Rendering Decal System</h2>
-						</header>								
-						<span class="image featured" style="width: auto; display: contents;"><img src="images/DecalsShowcase.gif" alt="" style="max-height: 28em; width: -webkit-fill-available; justify-self: center; padding: 2em;"/></span>
-						
-						<ul class="actions special" style="margin-bottom: 1em;">
+				<section id="main" class="container" style="padding-top: 1em; padding-bottom: 0em;">
+					<section class="box special" style="padding: 2em 0 2em 0;">
+						<header class="major" style="padding: 0;">
+							<h2 style="color: #FFC500;">Deferred Rendering Decal System</h2>
+						</header>
+						<span class="image featured" style="width: auto; display: contents;"><img src="images/DecalsShowcase.gif" alt="" style="width: -webkit-fill-available; justify-self: center; margin: 1.5em 0 2em 0; border-top: #ffffff50 1px solid; border-bottom: #ffffff50 1px solid;"/></span>
+
+						<ul class="actions special" style="margin-bottom: 0;">
 							<li><a href="https://github.com/theanilsson/Deferred-Rendering-Decal-System" target="_blank" class="button alt" style="display: flex;">View the implementation on GitHub<p class="fab fa-github" style="margin: 0 0 0 0.5em; font-size: xx-large; display: flex; align-self: anchor-center;"></p></a></li>
 						</ul>
 					</section>
 
 					<section class="box special">
+						<h4 style="text-align: left; color: #FFC500;">Summary</h4>
+						<p style="text-align: left; margin-bottom: 0px;">Decal rendering is a method of projecting textures onto meshes in the game world. It works by referencing the geometry buffer, which is a set of textures containing the positions, colors, normals, materials(etc.) of objects in the game world at their closest point to the camera/viewport at each pixel on the screen. Using these geometry buffer textures, Decals use Planar Projection to essentially slap a new flat texture of its own onto the meshes of the rendered gameworld, regardless of what textures were originally rendered there. That is not to say that it changes the textures of objects its Planar Projection “collides” with, but rather that in the places on the meshes that it does collide, it temporarily changes what color(and sometimes more) is shown to the viewer at that pixel on the screen.</p>
+					</section>
+
+					<section class="box special">
+						<h4 style="text-align: left; color: #FFC500;">My Motivations and Empowering the Artists</h4>
+						<p style="text-align: left; margin-bottom: 0px;">Late in fall 2024, I decided to take on the project of implementing Decals for my own personal enjoyment in my free time and because I wanted to take a small but significant step up from the graphics programming basics we had been taught a few months earlier at TGA. Another reason was that even though graphics programming isn’t my main focus, I still enjoy it quite a bit and I wanted something slightly out of the ordinary relating to graphics programming to showcase in my portfolio to show my range.</p>
+						<p style="margin-bottom: 0px;">&ZeroWidthSpace;</p>
+						<p style="text-align: left; margin-bottom: 0px;">An added benefit of my success with implementing Decals was that I was easily able to bring my implementation into our group project team’s custom engine, Dream Engine. This empowered our artists to add even more depth, interest and immersion to our environments. They added textures of posters, dirt, stickers and so much more onto generic floors and walls. They added arrows and signage guiding the player to key points in our level. They added textures of green goo for us programmers to dynamically place in runtime wherever our player’s goo projectiles collide with the game world, defining an area that slows enemies and using Decals to visually convey that information to the player.</p>
+					</section>
+
+					<section class="box special">
 						<div class="row">
 							<div class="col-12">
-								<h3 style="text-align: left;">Summary</h3>
+								<h4 style="text-align: left; color: #FFC500;">The Render Setup</h4>
 								<p style="text-align: left; margin-bottom: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6">
+								<h5 style="text-align: left; color: #FF7FE8; padding: 2em 0 0 0; margin-bottom: 0;">Decal initialization</h5>
+								<span class="image featured" style="width: auto; display: contents;"><img src="images/Decal Initialization.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 2em 0;"/></span>
+							</div>
+							<div class="col-6">
+								<h5 style="text-align: left; color: #FF7FE8; padding: 2em 0 0 0; margin-bottom: 0;">Decal drawcalls</h5>
+								<span class="image featured" style="width: auto; display: contents;"><img src="images/Decal Drawcalls.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 2em 0;"/></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<p style="text-align: left; margin-bottom: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6">
+								<h5 style="text-align: left; color: #FF7FE8; padding: 2em 0 0 0; margin-bottom: 0;">The Vertex Shader</h5>
+								<span class="image featured" style="width: auto; display: contents;"><img src="images/GBufferDecalVS.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0;"/></span>
+							</div>
+							<div class="col-6">								
+								<h5 style="text-align: left; color: #FF7FE8; padding: 2em 0 0 0; margin-bottom: 0;">The Pixel Shader</h5>
+								<span class="image featured" style="width: auto; display: contents;"><img src="images/GBufferDecalPS.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0;"/></span>
 							</div>
 						</div>
 					</section>
@@ -74,19 +111,33 @@
 					<section class="box special">
 						<div class="row">
 							<div class="col-12">
-								<h3 style="text-align: left;">The Render Setup</h3>
+								<h4 style="text-align: left; color: #FFC500;">The Level Editor Pipeline</h4>
 								<p style="text-align: left; margin-bottom: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">								
+								<h5 style="text-align: left; color: #FF7FE8; padding: 1em 0 0 0; margin-bottom: 0;">Setup in Unity</h5>
+								<span class="image featured" style="width: auto; display: contents;"><img src="images/unity scene.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 2em 0;"/></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<p style="text-align: left; margin-bottom: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<h5 style="text-align: left; color: #FF7FE8; padding: 1em 0 0 0; margin-bottom: 0;">Rendered in our engine</h5>
+								<span class="image featured" style="width: auto; display: contents;"><img src="images/rendered in custom engine.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 0 0;"/></span>
 							</div>
 						</div>
 					</section>
 
 					<section class="box special">
-						<div class="row">
-							<div class="col-12">
-								<h3 style="text-align: left;">The Level Editor Pipeline</h3>
-								<p style="text-align: left; margin-bottom: 0px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-							</div>
-						</div>
+						<ul class="actions special" style="margin-bottom: 0;">
+							<li><a href="https://github.com/theanilsson/Deferred-Rendering-Decal-System" target="_blank" class="button alt" style="display: flex;">View the implementation on GitHub<p class="fab fa-github" style="margin: 0 0 0 0.5em; font-size: xx-large; display: flex; align-self: anchor-center;"></p></a></li>
+						</ul>
 					</section>
 				</section>
 
