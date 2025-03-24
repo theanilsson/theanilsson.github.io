@@ -21,7 +21,7 @@
 									<li><a href="specialization.html">Battle Royale Simulation Using Heatmaps</a></li>
 									<li><a href="movement.html">Advanced PhysX Based FPS Movement</a></li>
 									<li><a href="enemysystem.html">Diablo 3 Inspired Enemy AI System</a></li>
-									<li><a href="pathfinding.html">A-star NavMesh Pathfinding and Funneling</a></li>
+									<li><a href="pathfinding.html">A-Star NavMesh Pathfinding and Funneling</a></li>
 									<li><a href="decals.html">Deferred Rendering Decal System</a></li>
 								</ul>
 							</li>
@@ -82,15 +82,15 @@
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Decal initialization</h5>
+								<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Decal Initialization</h5>
 								<p style="text-align: left; margin-bottom: 1em;">Each Decal is given a transform (containing position, rotation and scale) upon creation. When the Decal is then initialized it is assigned a unit cube mesh matching the width and height of the Decal’s texture in x and y scale respectively, and using z scale to determine how far(in both directions) along the forward axis the Planar Projection should project from the origin position of the decal. Position and rotation determines the location in the game world and the facing of the forward axis to be used for the Planar Projection. Essentially the transform is the Decal’s ObjectToWorld matrix.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Decal Initialization.png" alt="" style="width: -webkit-fill-available; max-width: 559px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<h5 style="text-align: left; color: #FF7FE8; padding: 2em 0 0.5em 0; margin-bottom: 0;">Decal drawcalls</h5>
-								<p style="text-align: left; margin-bottom: 1em;">In the setup I created for our engine, the level makes the drawcalls for all decals in succession. This is done right after rendering the level geometry onto the Geometry Buffer but before rendering any enemies, the player and any other objects we don’t want the Decals to be projected onto, since Decals will only project to what is currently on the Geometry Buffer textures before the Decal is rendered. With further development, this ordering could easily be exposed to be data driven from another interface, allowing artists and designers to assign in the level editor (or another tool) which objects Decals should project onto, and which to not project onto, and even to have such settings be different for different decals.</p>
+								<h5 style="text-align: left; color: #FF7FE8; padding: 2em 0 0.5em 0; margin-bottom: 0;">Decal Draw Calls</h5>
+								<p style="text-align: left; margin-bottom: 1em;">In the setup I created for our engine, the level makes the draw calls for all decals in succession. This is done right after rendering the level geometry onto the Geometry Buffer but before rendering any enemies, the player and any other objects we don’t want the Decals to be projected onto, since Decals will only project to what is currently on the Geometry Buffer textures before the Decal is rendered. With further development, this ordering could easily be exposed to be data driven from another interface, allowing artists and designers to assign in the level editor (or another tool) which objects Decals should project onto, and which to not project onto, and even to have such settings be different for different decals.</p>
 								<p style="text-align: left; margin-bottom: 1em;">The “myDeferredDecals” vector contains the Decals placed in our level editor (mainly by Artists, using documentation provided by me). The “myGooPuddleDecals” vector contains the Decals created by the player’s goo gun during regular gameplay. They all render using a new function I created for our engine’s model drawer that expands the object buffer to include both the untouched and inverse versions of the ObjectToWorld matrix. This was done since it was the first instance of us needing the inverse of an object’s ObjectToWorld matrix in our shaders. I could have just inverted the matrix in the shader using the GPU, but I decided against that because, as of the making of my Decals (and still true as of writing this text), our engine’s main performance issues were on the GPU, not the CPU.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Decal Drawcalls.png" alt="" style="width: -webkit-fill-available; max-width: 740px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							</div>
@@ -127,7 +127,7 @@
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Rendered in our engine</h5>
+								<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Rendered in Our Engine</h5>
 								<p style="text-align: left; margin-bottom: 1em;">The end result in our engine is a 1:1 replication of the setup displayed in Unity.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/rendered in custom engine.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 2em 0;"/></span>
 							</div>
