@@ -64,7 +64,7 @@
 
 					<section class="box special">
 						<h4 style="text-align: left; color: #FFC500;">Summary</h4>
-						<p style="text-align: left; margin-bottom: 0px;">A lot of the time in games, enemies will work independently of one another, not taking into account what's happening with the others when deciding what they themselves want to do. In Diablo 3 that is often not the case. They have shamans that raise their dead allies to fight again, big bulky mobs that buff their allies with an aura and various enemies making joint attacks with one another using tethers and other means to perform stronger attacks together than they could alone. Recreating that type of behavior, making elite versions of enemies and generally making polished (from the player's POV) enemy behavior that works similarly to that in Diablo were some of the requirements in one of our group projects. I was tasked with single handedly programming the enemies for our game and from those requirements, and from the large task I had ahead of me, the system I highlight on this page was born.</p>
+						<p style="text-align: left; margin-bottom: 0px;">A lot of the time in games, enemies will work independently of one another, not taking into account what's happening with the others when deciding what they themselves want to do. In Diablo 3 that is often not the case. They have shamans that raise their dead allies to fight again, big bulky mobs that buff their allies with an aura and various enemies making joint attacks with one another using tethers and other means to perform stronger attacks together than they could alone. Recreating that type of behavior, making elite versions of enemies and generally making polished (atleast from the player's PoV) enemy behavior that works similarly to that in Diablo were some of the requirements in one of our group projects. I was tasked with single handedly programming the enemies for our game and from those requirements, and from the large task I had ahead of me, the system I highlight on this page was born.</p>
 					</section>
 
 					<section class="box special">
@@ -126,28 +126,35 @@
 					<section class="box special">
 						<div class="row">
 							<div class="col-12">
-								<h4 style="text-align: left; color: #FFC500;">The Tools and Patterns</h4>
+								<h4 style="text-align: left; color: #FFC500;">The Algorithms, Models and Patterns</h4>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Decision Tree</h5>
-								<p style="text-align: left; margin-bottom: 1em;">Each Decal is given a transform</p>
+								<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Decision Tree Model</h5>
+								<p style="text-align: left; margin-bottom: 1em;">Each enemy type operates based on a loosely defined variation of the decision tree behavioral model. My implementation structures these decision trees as cascading if statements, with specialized conditions tailored to each enemy type's intended behavior. The image below showcases a portion of the most readable of the three decision trees, that of the Caster enemy type. Every frame, the Caster evaluates its state, first determining high-level conditions such as whether it has been alerted. Nested within this evaluation, it then decides the precise action to take, such as fleeing, turning toward the player, chasing after the player, or recalculating its pathfinding.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Decision tree behavior.png" alt="" style="width: -webkit-fill-available; max-width: 900px; justify-self: center; padding: 0 0 0 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<h5 style="text-align: left; color: #FF7FE8; padding: 2em 0 0.5em 0; margin-bottom: 0;">Object Pooling</h5>
-								<p style="text-align: left; margin-bottom: 1em;">Each Decal is given a transform</p>
-								<span class="image featured" style="width: auto; display: contents;"><img src="images/Decal Initialization.png" alt="" style="width: -webkit-fill-available; max-width: 559px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+								<h5 style="text-align: left; color: #FF7FE8; padding: 2em 0 0.5em 0; margin-bottom: 0;">Object Pooling Pattern</h5>
+								<p style="text-align: left; margin-bottom: 1em;">Ranged enemies leverage an object pooling system for their projectiles, maintaining a pool of pre-instantiated objects to optimize performance. This approach minimizes runtime memory allocations and garbage collection overhead by reusing projectiles instead of dynamically creating and destroying them during gameplay. This object pool implementation was co-written with another programmer on my team, Hugo Nyberg.</p>
+								<span class="image featured" style="width: auto; display: contents;"><img src="images/Enemy object pooling.png" alt="" style="width: -webkit-fill-available; max-width: 931px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
 								<h5 style="text-align: left; color: #FF7FE8; padding: 2em 0 0.5em 0; margin-bottom: 0;">Factory Pattern</h5>
-								<p style="text-align: left; margin-bottom: 1em;">Each Decal is given a transform</p>
-								<span class="image featured" style="width: auto; display: contents;"><img src="images/Decal Initialization.png" alt="" style="width: -webkit-fill-available; max-width: 559px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+								<p style="text-align: left; margin-bottom: 1em;">Our game employs the factory design pattern to encapsulate enemy creation, ensuring the level loading logic interacts only with an abstract interface. This promotes loose coupling, allowing subclasses to initialize specialized data independently.</p>
+								<span class="image featured" style="width: auto; display: contents;"><img src="images/Enemy factory pattern.png" alt="" style="width: -webkit-fill-available; max-width: 647px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div class="hover_img hover_img_link" style="width: fit-content;"><a href="pathfinding.html" class="highlightpageanchor"><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin: 2em 0 0 0;">A-Star Pathfinding with Funneling 🔗</h5><span><img src="images/PathfindingShowcase.gif" alt="image" style="height: 15em;" /></span></a></div>
+								<p style="text-align: left; margin-bottom: 1em;">The enemies all navigate the game world using an A-Star pathfinding algorithm that I wrote, along with an accompanying funneling algorithm to smooth out the found path. I wrote my initial implementation for pathfinding in 2D, so for this project I had to convert it to work in 3D. Essentially all that entailed was exchanging the Y axis for the Z axis in the actual pathfinding logic, and only using the Y axis to sample the height of the elevation that is being traversed.</p>
+								<span class="image featured" style="width: auto; display: contents;"><img src="images/Enemy pathfinding.png" alt="" style="width: -webkit-fill-available; max-width: 1144px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							</div>
 						</div>
 					</section>

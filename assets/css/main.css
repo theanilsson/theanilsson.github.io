@@ -343,6 +343,13 @@
 		text-decoration: underline #FFC500 !important;
 	}
 
+	.highlightpageanchor {
+		color: inherit;
+	}
+	.highlightpageanchor:hover {
+		text-decoration: underline #FF7FE8 !important;
+	}
+
 /* Row */
 
 	.row {
