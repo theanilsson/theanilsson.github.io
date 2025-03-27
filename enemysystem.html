@@ -64,13 +64,13 @@
 
 					<section class="box special">
 						<h4 style="text-align: left; color: #FFC500;">Summary</h4>
-						<p style="text-align: left; margin-bottom: 0px;">A lot of the time in games, enemies will work independently of one another, not taking into account what's happening with the others when deciding what they themselves want to do. In Diablo 3 that is often not the case. They have shamans that raise their dead allies to fight again, big bulky mobs that buff their allies with an aura and various enemies making joint attacks with one another using tethers and other means to perform stronger attacks together than they could alone. Recreating that type of behavior, making elite versions of enemies and generally making polished (atleast from the player's PoV) enemy behavior that works similarly to that in Diablo were some of the requirements in one of our group projects. I was tasked with single handedly programming the enemies for our game and from those requirements, and from the large task I had ahead of me, the system I highlight on this page was born.</p>
+						<p style="text-align: left; margin-bottom: 0px;">A lot of the time in games, enemies will work independently of one another, not taking into account what's happening with the others when deciding what they themselves want to do. In Diablo 3 that is often not the case. They have shamans that raise their dead allies to fight again, big bulky mobs that buff their allies with an aura and various enemies making joint attacks with one another using tethers and other means to perform stronger attacks together than they could alone. Recreating that type of behavior, making elite versions of enemies and generally making polished (atleast from the player's PoV) enemy behavior that works similarly to that in Diablo were some of the requirements in one of our group projects. I was tasked with single handedly programming the enemies for our game, so from those requirements, and from the large task I had ahead of me, the system I highlight on this page was born.</p>
 					</section>
 
 					<section class="box special">
 						<h4 style="text-align: left; color: #FFC500;">A Low Scope for a Short Timeframe</h4>
 						<p style="text-align: left; margin-bottom: 1em;">From the very beginning, our group recognized the immense workload required to meet the project's requirement specification. This meant making sacrifices in both quality and the time we could dedicate to each component in order to meet the deadline. Us programmers all understood that trade-offs were inevitable and that the code we produced wouldn't necessarily reflect our full capabilities. The others knew they would have to spend less time than they would have liked on aspects such as the player controller and particle systems. Similarly, I knew I wouldn't have much opportunity to iterate on the enemy system. It had to function reasonably well in the first iteration, with any subsequent refinements focusing on polishing and optimizing what was already in place rather than making major changes.</p>
-						<p style="text-align: left; margin-bottom: 0px;">In an ideal scenario I would have had the time to implement a full fledged behavior tree for each enemy type. Or at the very least I could have made a more proper implementation of a decision tree. I could have polished their attacking behavior to be less simplistic. Used more pushing logic using our Observer pattern instead of polling logic as I ended up doing in most places. Spent more time optimizing the code and making it easier to read. But regardless of what could have been, I'm still very proud of the end result and what I managed to produce in only a couple of weeks, managing to meet the deadline and produce a set of enemies interacting with one another in a very similar fashion as in Diablo.</p>
+						<p style="text-align: left; margin-bottom: 0px;">In an ideal scenario I would have had the time to implement a full fledged <b class="highlightedtext">behavior tree</b> for each enemy type. Or at the very least I could have made a more proper implementation of a <b class="highlightedtext">decision tree</b>. I could have polished their attacking behavior to be less simplistic. Used more <b class="highlightedtext">pushing logic using our Observer pattern</b> instead of polling logic as I ended up doing in most places. Spent more time <b class="highlightedtext">optimizing the code and making it easier to read</b>. But regardless of what could have been, I'm still very proud of the end result and what I managed to produce in only a couple of weeks, managing to meet the deadline and produce a set of enemies interacting with one another in a very similar fashion as in Diablo.</p>
 					</section>
 
 					<section class="box special">
@@ -139,21 +139,21 @@
 						<div class="row">
 							<div class="col-12">
 								<h5 style="text-align: left; color: #FF7FE8; padding: 2em 0 0.5em 0; margin-bottom: 0;">Object Pooling Pattern</h5>
-								<p style="text-align: left; margin-bottom: 1em;">Ranged enemies leverage an object pooling system for their projectiles, maintaining a pool of pre-instantiated objects to optimize performance. This approach minimizes runtime memory allocations and garbage collection overhead by reusing projectiles instead of dynamically creating and destroying them during gameplay. This object pool implementation was co-written with another programmer on my team, Hugo Nyberg.</p>
+								<p style="text-align: left; margin-bottom: 1em;">Ranged enemies leverage an object pooling system for their projectiles, maintaining a pool of <b class="highlightedtext">pre-instantiated objects to optimize performance</b>. This approach <b class="highlightedtext">minimizes runtime memory allocations</b> and <b class="highlightedtext">garbage collection overhead</b> by reusing projectiles instead of dynamically creating and destroying them during gameplay. This object pool implementation was co-written with another programmer on my team, Hugo Nyberg.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Enemy object pooling.png" alt="" style="width: -webkit-fill-available; max-width: 931px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
 								<h5 style="text-align: left; color: #FF7FE8; padding: 2em 0 0.5em 0; margin-bottom: 0;">Factory Pattern</h5>
-								<p style="text-align: left; margin-bottom: 1em;">Our game employs the factory design pattern to encapsulate enemy creation, ensuring the level loading logic interacts only with an abstract interface. This promotes loose coupling, allowing subclasses to initialize specialized data independently.</p>
+								<p style="text-align: left; margin-bottom: 1em;">Our game employs the factory design pattern to <b class="highlightedtext">encapsulate</b> enemy creation, ensuring the level loading logic interacts only with an <b class="highlightedtext">abstract interface</b>. This promotes <b class="highlightedtext">loose coupling</b>, allowing subclasses to initialize specialized data independently.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Enemy factory pattern.png" alt="" style="width: -webkit-fill-available; max-width: 647px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
 								<div class="hover_img hover_img_link" style="width: fit-content;"><a href="pathfinding.html" class="highlightpageanchor"><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin: 2em 0 0 0;">A-Star Pathfinding with Funneling 🔗</h5><span><img src="images/PathfindingShowcase.gif" alt="image" style="height: 15em;" /></span></a></div>
-								<p style="text-align: left; margin-bottom: 1em;">The enemies all navigate the game world using an A-Star pathfinding algorithm that I wrote, along with an accompanying funneling algorithm to smooth out the found path. I wrote my initial implementation for pathfinding in 2D, so for this project I had to convert it to work in 3D. Essentially all that entailed was exchanging the Y axis for the Z axis in the actual pathfinding logic, and only using the Y axis to sample the height of the elevation that is being traversed.</p>
+								<p style="text-align: left; margin-bottom: 1em;">The enemies all navigate the game world using an A-Star pathfinding algorithm that I wrote, along with an accompanying funneling algorithm to smooth out the found path. I wrote my initial implementation for pathfinding in 2D, so for this project <b class="highlightedtext">I had to convert it to work in 3D</b>. Essentially all that entailed was exchanging the Y axis for the Z axis in the actual pathfinding logic, and only using the Y axis to sample the height of the elevation that is being traversed.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Enemy pathfinding.png" alt="" style="width: -webkit-fill-available; max-width: 1144px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							</div>
 						</div>
@@ -177,7 +177,7 @@
 						</li>
 					</ul>
 					<ul class="copyright" style="list-style-type: none;">
-						<li>Portfolio by Thea Nilsson</li><li>Website design based on a template by <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+						<li>This website was designed & developed by Thea Nilsson using raw HTML & CSS</li><li>The initial website framework was based on a template by <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
 					</ul>
 				</footer>
 

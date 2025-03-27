@@ -350,6 +350,11 @@
 		text-decoration: underline #FF7FE8 !important;
 	}
 
+	.highlightedtext{
+		color: #FF7FE8;
+		font-weight: inherit;
+	}
+
 /* Row */
 
 	.row {
