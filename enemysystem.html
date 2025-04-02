@@ -91,6 +91,7 @@
 						<div class="row" style="padding-bottom: 4em;">
 							<div class="col-12">
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/WeakEnemy alert.png" alt="" style="width: -webkit-fill-available; max-width: 723px; justify-self: center; padding: 0 0 0 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+								<a class="highlightpageanchor2" href="https://github.com/theanilsson/ARPG-Enemy-AI-System/blob/main/code/WeakEnemy.cpp#L164" target="_blank">Go to the snippet on GitHub</a>
 							</div>
 						</div>
 						<div class="row" style="padding-bottom: 1em;">
@@ -105,6 +106,7 @@
 						<div class="row" style="padding-bottom: 4em;">
 							<div class="col-12">
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/RangedEnemy behavior.png" alt="" style="width: -webkit-fill-available; max-width: 900px; justify-self: center; padding: 0 0 0 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+								<a class="highlightpageanchor2" href="https://github.com/theanilsson/ARPG-Enemy-AI-System/blob/main/code/RangedEnemy.cpp#L341" target="_blank">Go to the snippet on GitHub</a>
 							</div>
 						</div>
 						<div class="row" style="padding-bottom: 1em;">
@@ -119,6 +121,7 @@
 						<div class="row" style="padding-bottom: 0em;">
 							<div class="col-12">
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/TankEnemy behavior.png" alt="" style="width: -webkit-fill-available; max-width: 900px; justify-self: center; padding: 0 0 0 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+								<a class="highlightpageanchor2" href="https://github.com/theanilsson/ARPG-Enemy-AI-System/blob/main/code/TankEnemy.cpp#L120" target="_blank">Go to the snippet on GitHub</a>
 							</div>
 						</div>
 					</section>
@@ -134,27 +137,30 @@
 								<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Decision Tree Model</h5>
 								<p style="text-align: left; margin-bottom: 1em;">Each enemy type operates based on a loosely defined variation of the decision tree behavioral model. My implementation structures these decision trees as cascading if statements, with specialized conditions tailored to each enemy type's intended behavior. The image below showcases a portion of the most readable of the three decision trees, that of the Caster enemy type. Every frame, the Caster evaluates its state, first determining high-level conditions such as whether it has been alerted. Nested within that evaluation, it then decides the precise action to take, such as fleeing, turning toward the player, chasing after the player, or recalculating its pathfinding.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Decision tree behavior.png" alt="" style="width: -webkit-fill-available; max-width: 900px; justify-self: center; padding: 0 0 0 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+								<a class="highlightpageanchor2" href="https://github.com/theanilsson/ARPG-Enemy-AI-System/blob/main/code/RangedEnemy.cpp#L101" target="_blank">Go to the snippet on GitHub</a>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<h5 style="text-align: left; color: #FF7FE8; padding: 2em 0 0.5em 0; margin-bottom: 0;">Object Pooling Pattern</h5>
+								<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.5em 0; margin-bottom: 0;">Object Pooling Pattern</h5>
 								<p style="text-align: left; margin-bottom: 1em;">Ranged enemies leverage an object pooling system for their projectiles, maintaining a pool of <b class="highlightedtext">pre-instantiated objects to optimize performance</b>. This approach <b class="highlightedtext">minimizes runtime memory allocations</b> and <b class="highlightedtext">garbage collection overhead</b> by reusing projectiles instead of dynamically creating and destroying them during gameplay. This object pool implementation was co-written with another programmer on my team, Hugo Nyberg.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Enemy object pooling.png" alt="" style="width: -webkit-fill-available; max-width: 931px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<h5 style="text-align: left; color: #FF7FE8; padding: 2em 0 0.5em 0; margin-bottom: 0;">Factory Pattern</h5>
+								<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.5em 0; margin-bottom: 0;">Factory Pattern</h5>
 								<p style="text-align: left; margin-bottom: 1em;">Our game employs the factory design pattern to <b class="highlightedtext">encapsulate</b> enemy creation, ensuring the level loading logic interacts only with an <b class="highlightedtext">abstract interface</b>. This promotes <b class="highlightedtext">loose coupling</b>, allowing subclasses to initialize specialized data independently.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Enemy factory pattern.png" alt="" style="width: -webkit-fill-available; max-width: 647px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+								<a class="highlightpageanchor2" href="https://github.com/theanilsson/ARPG-Enemy-AI-System/blob/main/code/EnemyFactory.h" target="_blank">Go to the snippet on GitHub</a>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<div class="hover_img hover_img_link" style="width: fit-content;"><a href="pathfinding.html" class="highlightpageanchor"><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin: 2em 0 0 0;">A-Star Pathfinding with Funneling 🔗</h5><span><img src="images/PathfindingShowcase.gif" alt="image" style="height: 15em;" /></span></a></div>
+								<div class="hover_img hover_img_link" style="width: fit-content;"><a href="pathfinding.html" class="highlightpageanchor"><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin: 3em 0 0 0;">A-Star Pathfinding with Funneling 🔗</h5><span><img src="images/PathfindingShowcase.gif" alt="image" style="height: 15em;" /></span></a></div>
 								<p style="text-align: left; margin-bottom: 1em;">The enemies all navigate the game world using an A-Star pathfinding algorithm that I wrote, along with an accompanying funneling algorithm to smooth out the found path. I wrote my initial implementation for pathfinding in 2D, so for this project <b class="highlightedtext">I had to convert it to work in 3D</b>. Essentially all that entailed was exchanging the Y axis for the Z axis in the actual pathfinding logic, and only using the Y axis to sample the height of the elevation that is being traversed.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Enemy pathfinding.png" alt="" style="width: -webkit-fill-available; max-width: 1144px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+								<a class="highlightpageanchor2" href="https://github.com/theanilsson/ARPG-Enemy-AI-System/blob/main/code/Enemy.cpp#L294" target="_blank">Go to the snippet on GitHub</a>
 							</div>
 						</div>
 					</section>
@@ -176,8 +182,9 @@
 							<a href="files/Thea Nilsson CV.pdf" target="_blank" style="padding-left: 0.1em; padding-right: 0.1em; vertical-align: middle; border-bottom: none; vertical-align: middle;"><img src="images/CV Icon White.png" alt="" style="width: 1.35em; height: 1.9em; vertical-align: middle;"/></a>
 						</li>
 					</ul>
-					<ul class="copyright" style="list-style-type: none;">
-						<li>This website was designed & developed by Thea Nilsson using only HTML & CSS</li><li>The initial website framework was based on a template by <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+					<ul style="list-style-type: none;">
+						<li style="margin-bottom: 1em; color: #FF7FE8; font-size: 0.8em;">This website was designed & developed by Thea Nilsson using only HTML & CSS</li>
+						<li style="color: #FF7FE8; font-size: 0.8em;">The initial website framework was based on a template by <a style="border-bottom: none; font-size: inherit;" class="highlightpageanchor2" href="http://html5up.net" target="_blank">HTML5 UP</a></li>
 					</ul>
 				</footer>
 

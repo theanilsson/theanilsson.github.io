@@ -350,6 +350,16 @@
 		text-decoration: underline #FF7FE8 !important;
 	}
 
+	.highlightpageanchor2 {
+		font-size: 0.8em;
+		border-bottom: 0px;
+		color: #FF7FE8;
+		text-decoration: underline #FF7FE8 !important;
+	}
+	.highlightpageanchor2:hover {
+		text-decoration: underline #fcfcfc !important;
+	}
+
 	.highlightedtext{
 		color: #FF7FE8;
 		font-weight: inherit;
