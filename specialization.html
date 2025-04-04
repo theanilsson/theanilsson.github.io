@@ -115,8 +115,8 @@
 					<h4 style="text-align: left; color: #FFC500;">The Heat Sampling Algorithms</h4>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Breath First Search</h5>
-							<p style="text-align: left; margin-bottom: 1em;">Required valuable heat data.</p>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Breath-First Search (BFS)</h5>
+							<p style="text-align: left; margin-bottom: 1em;">To identify clusters of hot or cold cells, my algorithms use <b class="highlightedtext">Breadth-First Search</b> to group together neighboring cells that meet specific heat thresholds, at or below a defined value for cold clusters, and at or above it for hot clusters. A set of visited cells is maintained throughout the search to avoid evaluating the same cell more than once. This sampling method relies on meaningful heat distribution across the Heatmaps. If the grid is overwhelmingly hot or cold, the entire map could end up being treated as a single massive cluster, reducing the usefulness of the data. To address this issue, I also implemented a technique of cluster splitting, which I cover in more detail later in this section.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Breadth first search.png" alt="" style="width: -webkit-fill-available; max-width: 956px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Heatmap.cpp#L190" target="_blank">Go to the snippet on GitHub</a>
 						</div>
@@ -124,7 +124,7 @@
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.5em 0; margin-bottom: 0;">Limiting the Sample to a Radius</h5>
-							<p style="text-align: left; margin-bottom: 1em;">Calculating indices using radius and eliminating edge cells using radius squared distance checks.</p>
+							<p style="text-align: left; margin-bottom: 1em;">For algorithms requiring sampels from within a certain area, I developed a more specialized version of my first sampling algorithm. In this new version I use a position and a radius as in parameters, calculating indices to visit during my Breadth-First Search using the radius and eliminating edge cells using radius squared distance checks.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Using radius for indices.png" alt="" style="width: -webkit-fill-available; max-width: 753px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Heatmap.cpp#L307" target="_blank">Go to the snippet on GitHub</a>
 						</div>
@@ -132,7 +132,7 @@
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.5em 0; margin-bottom: 0;">Cluster Splitting</h5>
-							<p style="text-align: left; margin-bottom: 1em;">Defining certain cluster sizes for extracting valuable data. Need for further tweaking.</p>
+							<p style="text-align: left; margin-bottom: 1em;">Early on in development, I ran into a frustrating issue where narrow channels of cold would snake around hot spots, causing almost the entire grid to be treated as a single cluster. To solve this, I implemented a system for splitting large clusters into smaller, more manageable segments. By defining cluster size limits based on the scale of each sampling algorithm, allowing larger clusters when sampling broader areas, and smaller ones for more localized sampling, I was able to extract more meaningful data and create a simulation that not only performed better but also looked better visually.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Split cluster.png" alt="" style="width: -webkit-fill-available; max-width: 781px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Heatmap.cpp#L405" target="_blank">Go to the function on GitHub</a>
 						</div>
