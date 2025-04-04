@@ -72,7 +72,7 @@
 					<h4 style="text-align: left; color: #FFC500;">The Grappling Hook</h4>
 					<div class="row">
 						<div class="col-12">
-							<div class="hover_img" style="width: fit-content;"><a href="pathfinding.html"><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0;">Pull Direction and Strength Calculations 🔍</h5><span><img src="images/FpsMovement_CornerSwingSlide.gif" alt="image" style="height: 15em;" /></span></a></div>
+							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0;">Pull Direction and Strength Calculations 🔍</h5><span><img src="images/FpsMovement_CornerSwingSlide.gif" alt="image" style="height: 15em;" /></span></a></div>
 							<p style="text-align: left; margin-bottom: 1em;">To emulate the slingshot moves that are possible in Titanfall, my grappling hook takes the current velocity into account as an additive factor to keep pulling the player slightly in the direction that they're already moving instead of straight toward the grapple point.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Pull calculations.png" alt="" style="width: -webkit-fill-available; max-width: 1040px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 						</div>
@@ -86,7 +86,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<div class="hover_img" style="width: fit-content;"><a href="pathfinding.html"><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin-top: 3em;">Rope Swing 🔍</h5><span><img src="images/FpsMovement_SwingUp.gif" alt="image" style="height: 15em;" /></span></a></div>
+							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin-top: 3em;">Rope Swing 🔍</h5><span><img src="images/FpsMovement_SwingUp.gif" alt="image" style="height: 15em;" /></span></a></div>
 							<p style="text-align: left; margin-bottom: 1em;">In a similar vein to the additive velocity factor when calculating direction, this part of the force calculation exists to help the slingshot functionality emerge. It does so by calculating your tangential velocity along the pull direction, basically to make it pull you in less when you aren't already moving in the same direction that it's trying to pull you in.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Rope swing.png" alt="" style="width: -webkit-fill-available; max-width: 896px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 						</div>
@@ -163,7 +163,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<div class="hover_img" style="width: fit-content;"><a href="pathfinding.html"><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin-top: 3em;">Slingshot Jump 🔍</h5><span><img src="images/FpsMovement_SlingSlideJumpy.gif" alt="image" style="height: 15em;" /></span></a></div>
+							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin-top: 3em;">Slingshot Jump 🔍</h5><span><img src="images/FpsMovement_SlingSlideJumpy.gif" alt="image" style="height: 15em;" /></span></a></div>
 							<p style="text-align: left; margin-bottom: 1em;">To enable slingshot jumps like those possible when hooking the ground with the Titanfall grappling hook, I simply check if the player is grounded while grappling and launch them at a great velocity upwards along the Y-axis whilst preserving their velocity along the other axes.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Grappling jump.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Advanced-PhysX-Based-FPS-Movement/blob/main/code/Player.cpp#L689" target="_blank">Go to the function on GitHub</a>
