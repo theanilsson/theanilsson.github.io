@@ -94,7 +94,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.5em 0; margin-bottom: 0;">Air Drops</h5>
+							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin-top: 3em;">Air Drops 🔍</h5><span><img src="images/Heatmap airdrops.gif" alt="image" style="width: auto; max-width: 50em;" /></span></a></div>
 							<p style="text-align: left; margin-bottom: 1em;">Air drops are similar to loot piles. They too mostly exist to alter the behavior of the pawns and emit valuable heat data. New air drops spawn in the coldest cluster within the current safe zone. This usually means that the drop is positioned as far as possible from previous air drops without being placed at the very edge of the safe zone. They spawn "in the air", first emitting heat on the Air Drops Heatmap, then drifting over time based on the direction of the wind sampled from the Weather Heatmap until they "land" and are able to be looted by pawns.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Airdrop spawning.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Simulation.cpp#L316" target="_blank">Go to the function on GitHub</a>
@@ -102,8 +102,9 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.5em 0; margin-bottom: 0;">The Procedurally Generated Weather System</h5>
-							<p style="text-align: left; margin-bottom: 1em;">The weather system doesn't behave like the other heatmaps. It uses Cellular Automata rather than having heat emitted and diffused based on game events.</p>
+							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin-top: 3em;">The Procedurally Generated Weather System 🔍</h5><span><img src="images/Heatmap weather.gif" alt="image" style="width: auto; max-width: 50em;" /></span></a></div>
+							<p style="text-align: left; margin-bottom: 0.5em;">The weather system is built on its own Heatmap, but it behaves quite differently from the others. Instead of having heat emitted and diffused based on game events, the weather map is procedurally generated using <b class="highlightedtext">Cellular Automata</b>, a mathematical model used to simulate patterns of replication and decay. Each cell in the Weather Heatmap can be in one of four possible weather states: Clear, Cloudy, Rainy, or Stormy. When the map updates, each cell checks the states of its neighboring cells and, based on rules defined in my algorithm, decides whether to calm down, stay the same, or escalate to a more intense weather state.</p>
+							<p style="text-align: left; margin-bottom: 1em;">To prevent the entire map from settling into a uniform state (such as all cells being Clear or all being Stormy), I biased the algorithm slightly toward escalation. At the same time, I added a small random chance for decay to ensure the system stays dynamic and never truly stabilizes. If you're familiar with <b class="highlightedtext">Conway's Game of Life</b>, that's also a simulation based on Cellular Automata.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Cellular automata.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Heatmap.cpp#L98" target="_blank">Go to the snippet on GitHub</a>
 						</div>
@@ -143,13 +144,13 @@
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Avoiding Predictability</h5>
-							<p style="text-align: left; margin-bottom: 1em;">A common problem in competitive games is predictability. Players like to learn the rules of the game to try to figure out ahead of time better areas to go to or where the safe zone is going to move. I wanted to try to develop a kind of solution to that problem using game events that actively adapt to the state of the game round and each player's actions, so that no one can know ahead of time what's going to happen, no matter how good they are at pattern recognition.</p>
+							<p style="text-align: left; margin-bottom: 1em;">A common problem in competitive games is predictability. Players like to learn the rules of the game to try to figure out ahead of time better areas to go to or where the safe zone is going to move. I wanted to try to develop a kind of solution to that problem using game events that actively adapt to the state of the game round and each player's actions. That way, even skilled players with great pattern recognition can't predict what's going to happen next, keeping every round fresh and uncertain.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Leveling the Playing Field</h5>
-							<p style="text-align: left; margin-bottom: 0.5em;">Camping in the same spot for too long can give players an advantage in both survival and combat. To counter this, the safe zone avoids areas where pawns have spent a lot of time, encouraging movement. Similarly, it steers clear of locations where a lot of loot has been picked up to prevent pawns who are already well-equipped from gaining an additional strategic edge. The same logic applies to air drop spawns, with new drops avoiding appearing near previous ones to discourage camping and prevent players who looted earlier drops from gaining too much of an advantage.</p>
+							<p style="text-align: left; margin-bottom: 0.5em;">Staying in the same spot for too long can give players an edge in both survival and combat. To mitigate this, the safe zone actively avoids areas where pawns have lingered, encouraging movement and reducing the effectiveness of camping strategies. Likewise, it avoids regions where a lot of loot has been picked up, preventing already well-equipped pawns from gaining even more of a positional advantage. The same approach is applied to air drop spawns, with new drops steering clear of previous drop zones to discourage repeat looting and keep the competition balanced.</p>
 						</div>
 					</div>
 					<div class="row">
@@ -161,41 +162,41 @@
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Preventing Clustering</h5>
-							<p style="text-align: left; margin-bottom: 1em;">The safe zone avoids areas with high death tolls to try to prevent pawns clustering up too early in the round by being pushed toward areas that already have a lot of activity.</p>
+							<p style="text-align: left; margin-bottom: 1em;">The safe zone also avoids areas with high death counts to help reduce early-round clustering. This prevents pawns from being funneled into already active hotspots and encourages a more even spread of engagement across the map.</p>
 						</div>
 					</div>
 				</section>
 
 				<section class="box special">
-					<h4 style="text-align: left; color: #FFC500;">Opportunities and Possibilities</h4>
+					<h4 style="text-align: left; color: #FFC500;">Applicable Use Cases and Further Possibilities</h4>
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Tools for Designers</h5>
-							<p style="text-align: left; margin-bottom: 1em;">Tweak minute details of how events in the game world evolve. Expose parameters through editor or runtime developer tools.</p>
+							<p style="text-align: left; margin-bottom: 1em;">If a system like this were integrated into a real game environment, with heatmap parameters and sampling algorithms exposed through an editor or runtime developer tools, it could offer a wide range of possibilities for UI, level, and game designers. It would give them fine-grained control over how events in the game world evolve, and provide powerful new tools for balancing and adding depth to gameplay.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Minimap Events</h5>
-							<p style="text-align: left; margin-bottom: 1em;">Sampling e.g. time spent in area to show an indicator to other players that someone is lingering in that general area, sampling weather to show air current flow at various points on the minimap with some kind of sprite/vfx, etc.</p>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Map Events</h5>
+							<p style="text-align: left; margin-bottom: 1em;">A system like this could be seamlessly integrated into the UI of many different game genres. Even within the Battle Royale genre alone, the potential applications are numerous. For example, the Time Spent In Area Heatmap could be used to display indicators that hint at player presence in a given area. Similarly, the Weather Heatmap could drive visualizations like air current flow on the map using sprites or visual effects.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Better Weather System</h5>
-							<p style="text-align: left; margin-bottom: 1em;">It was a fun idea and I wanted to refresh my procedural generation skills. Could be polished to behave in a better looking way, more like real weather instead of the chaotic back and forth between stormy and calm conditions that currently occour over the course of the simulation.</p>
+							<p style="text-align: left; margin-bottom: 1em;">There's a lot of potential in further developing the weather system. I originally added it because it fit the theme of the simulation and gave me a chance to revisit procedural generation. There's still plenty of room to refine it, such as implementing realistic air current propagation across the map, rather than simply treating the coldest point as the direction winds are blowing toward. Overall, I'd like the system to behave more like real weather, rather than the chaotic back-and-forth between stormy and clear conditions that currently plays out during the simulation.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Advanced AI</h5>
-							<p style="text-align: left; margin-bottom: 1em;">Continuously changing weights in decision making. Visibility hindrances from weather. etc.</p>
+							<p style="text-align: left; margin-bottom: 1em;">With more time invested in the project, the AI could be significantly improved to feel much more intelligent and dynamic. They could use <b class="highlightedtext">Finite State Machines or Behavior Trees to improve decision-making, and incorporate Steering Behaviors</b> influenced by data from various Heatmaps. Their choices could adapt in real time by adjusting decision weights based on sampled data. They could also be given visibility ranges, affected by factors like weather, to create more realistic perception and behavior.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Voronoi Diagrams</h5>
-							<p style="text-align: left; margin-bottom: 1em;">Point of interest world generation.</p>
+							<p style="text-align: left; margin-bottom: 1em;">I had originally planned to add <b class="highlightedtext">procedurally generated Points of Interest using Voronoi Diagrams</b>, but ended up cutting that feature to keep the project within a manageable scope and timeline. Implementing it would have also required introducing simulated geometry into the gameplay, along with collision detection and other systems, which would have pushed the scope far beyond what was realistic for the time I had.</p>
 						</div>
 					</div>
 				</section>
