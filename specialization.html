@@ -75,7 +75,7 @@
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Loot Piles</h5>
-							<p style="text-align: left; margin-bottom: 1em;">Loot piles are static and simple objects in this simulator. They mostly exist because all Battle Royale games have loot on the ground, and they help direct the pawns to do more than just try to kill eachother and run to the center of the safe zone. Once picked up by a pawn they emit heat on the Looted Spots Heatmap.</p>
+							<p style="text-align: left; margin-bottom: 1em;">Loot piles are static and simple objects in this simulator. They mostly exist because all Battle Royale games have loot on the ground, and they help direct the pawns to do more than just try to kill each other and run to the center of the safe zone. Once picked up by a pawn they emit heat on the Looted Spots Heatmap.</p>
 						</div>
 					</div>
 					<div class="row">
@@ -87,7 +87,7 @@
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">The Safe Zone</h5>
-							<p style="text-align: left; margin-bottom: 1em;">The safe zone is defined as a circle shrinking in a certain direction in even intervals spread over the course of the game round. Any pawns caught outside the radius of the safe zone while it's shrinking are instantly killed (emitting Player Deaths heat). When it's time for a new shrinking interval to begin, the simulation samples cold spots from the Player Deaths, Time Spent In Area, Looted Spots and Weather Heatmaps. Using directional vectors from it's current center point toward the sampled cold spots, it then combines those directions after scaling them based on an array of how much each heatmap "weighs" for the purposes of data sampling. Heavier weight meaning it takes more of that direction into account when determining it's final shrinking direction.</p>
+							<p style="text-align: left; margin-bottom: 1em;">The safe zone is defined as a circle shrinking in a certain direction in even intervals spread over the course of the game round. Any pawns caught outside the radius of the safe zone while it's shrinking are instantly killed (emitting Player Deaths heat). When it's time for a new shrinking interval to begin, the simulation samples cold spots from the Player Deaths, Time Spent In Area, Looted Spots and Weather Heatmaps. Using directional vectors from it's current center point toward the sampled cold spots, it then combines those directions after scaling them based on an array of how much each heatmap "weighs" for the purposes of data sampling. Heavier weight meaning it takes more of that direction into account when determining its final shrinking direction.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Safe zone shrinking.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Simulation.cpp#L299" target="_blank">Go to the function on GitHub</a>
 						</div>
@@ -143,7 +143,7 @@
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Avoiding Predictability</h5>
-							<p style="text-align: left; margin-bottom: 1em;">A common problem in competitive games is predictability. Players like to learn the rules of the game to try to figure out ahead of time better areas to go to or where the safe zone is going to move. I wanted to try to develop a kind of solution to that problem using game events that actively adapt to the state of the game round and each player's actions, so that noone can know ahead of time what's going to happen, no matter how good they are at pattern recognition.</p>
+							<p style="text-align: left; margin-bottom: 1em;">A common problem in competitive games is predictability. Players like to learn the rules of the game to try to figure out ahead of time better areas to go to or where the safe zone is going to move. I wanted to try to develop a kind of solution to that problem using game events that actively adapt to the state of the game round and each player's actions, so that no one can know ahead of time what's going to happen, no matter how good they are at pattern recognition.</p>
 						</div>
 					</div>
 					<div class="row">
