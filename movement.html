@@ -49,6 +49,18 @@
 					<p>Gameplay & Systems Programmer</p>
 				</section>
 
+				<!-- Scrollmenu -->
+					<section id="scrollmenu">
+						<p>Content:</p>
+						<ul>
+							<li><a href="#summary">Summary</a></li>
+							<li><a href="#grapplinghook">Grappling Hook</a></li>
+							<li><a href="#movement">Movement</a></li>
+							<li><a href="#highlight">Highlight Reels</a></li>
+						</ul>	
+						<a id="backtotop" href="#banner">↑ Back to top</a>
+					</section>
+
 			<!-- Main -->
 			<section id="main" class="container" style="padding-top: 1em; padding-bottom: 0em;">
 				<section class="box special" style="padding: 2em 0 2em 0;">
@@ -57,6 +69,7 @@
 					</header>
 					<span class="image featured" style="width: auto; display: contents;"><img src="images/FpsMovement_SlingSurfSlideSling.gif" alt="" style="width: -webkit-fill-available; justify-self: center; margin: 1.5em 0 2em 0; border-top: #ffffff50 1px solid; border-bottom: #ffffff50 1px solid;"/></span>
 
+					<div class="scrollnavitem" id="summary"></div>
 					<ul class="actions special" style="margin-bottom: 0;">
 						<li><a href="https://github.com/theanilsson/Advanced-PhysX-Based-FPS-Movement" target="_blank" class="button alt" style="display: flex;">View the implementation on GitHub<p class="fab fa-github" style="margin: 0 0 0 0.5em; font-size: xx-large; display: flex; align-self: anchor-center;"></p></a></li>
 					</ul>
@@ -65,6 +78,7 @@
 				<section class="box special">
 					<h4 style="text-align: left; color: #FFC500;">Summary</h4>
 					<p style="text-align: left; margin-bottom: 1em;">In our 7th group project at TGA we were tasked with developing an FPS and my team and I settled on the Frontier Defense game mode in Titanfall 2 as our reference game. Our choice in reference game made me very excited since a large portion of the code from Titanfall 2 was ported over to make Apex Legends, one of my all time favorite online games. I have hundreds of hours in Apex and a large portion of those are from playing the character called Pathfinder, whose signature ability is functionally the same grappling hook that players have access to in Titanfall 2.</p>
+					<div class="scrollnavitem" id="grapplinghook"></div>
 					<p style="text-align: left; margin-bottom: 0px;">After some discussion about what each of us wanted to focus on in this project, my fellow programmers graciously allowed me to take on the task of single handedly developing the movement controller for our player character, including a grappling hook, momentum preserving ground slide, and more. Although the end result that I produced isn't a 1:1 recreation of the Titanfall movement, it's not all that far from it in my opinion. Given the scope of our project, the time frame I had to work with and sacrifices I had to make to have it better fit our game, I'm very happy with the result. I also feel that, with more time, I could continue working on the movement to make it even closer to Titanfall's movement.</p>
 				</section>
 
@@ -103,6 +117,7 @@
 							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.5em 0; margin-bottom: 0;">Snapping Conditions</h5>
 							<p style="text-align: left; margin-bottom: 1em;">Finally I have two main conditions deciding whether to automatically end the grappling, "snapping the line" so to say. One is the player being close to the grappling point, either from having been pulled there over time or by grappling somewhere right next to themselves. The other is that the player has a large velocity away from the grapple point after the grapple forces have already been applied for three fourths of a second, at that point we can assume they are doing a slingshot maneuver of some kind.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Snapping conditions.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+							<div class="scrollnavitem" id="movement"></div>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Advanced-PhysX-Based-FPS-Movement/blob/main/code/Player.cpp#L637" target="_blank">Go to the function on GitHub</a>
 						</div>
 					</div>
@@ -170,6 +185,7 @@
 							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.5em 0; margin-bottom: 0;">Double Jump</h5>
 							<p style="text-align: left; margin-bottom: 1em;">Just like in Titanfall, our game has a double jump, and my double jump feels very similar to theirs in my opinion, fighting against any current downwards velocity to act more like an air jet shooting down to lift you rather than just kinematic movement pushing you upwards.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Double jumping.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+							<div class="scrollnavitem" id="highlight"></div>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Advanced-PhysX-Based-FPS-Movement/blob/main/code/Player.cpp#L796" target="_blank">Go to the function on GitHub</a>
 						</div>
 					</div>

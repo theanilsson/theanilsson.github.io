@@ -3300,6 +3300,57 @@
 			margin: 1em 0 0 0;
 		}
 
+/* Scrollmenu */
+#scrollnavitem {
+	display: none;
+}
+
+#scrollmenu {
+	position: fixed;
+	background-color: #231B3B99;
+	font-weight: 550 !important;
+	width: calc(10%);
+	margin: 0 0 0 0;
+	padding: 1.5em 0 1.5em 0;
+	justify-content: center;
+    display: grid;
+	border-radius: 0 0.5em 0.5em 0;
+}
+
+	#scrollmenu p {
+		font-size: calc(65%);
+		list-style: decimal;
+		text-align: left;
+		margin: 0 1.5em 0 1.25em;
+		padding: 0 0 0 0;
+		color: #FFC500;
+	}
+
+	#scrollmenu ul {
+		font-size: calc(60%);
+		list-style: decimal;
+		text-align: left;
+		margin: 0 1.5em 0 2.5em;
+		padding: 0 0 0 0;
+	}
+
+	#scrollmenu ul li::marker {
+		color: #FF7FE8;
+	}
+
+	#scrollmenu ul li a {
+		color: #FF7FE8;
+		border: none;
+	}
+
+	#backtotop {
+		color: #FF7FE8;
+		border: none;
+		font-size: calc(60%);
+		font-weight: 450 !important;
+		margin-left: 2.25em;
+	}
+
 /* Banner */
 
 	#banner {
@@ -3880,6 +3931,12 @@
 						margin-bottom: -2em;
 						margin-top: 2em;
 					}
+
+		/* Banner */
+
+			#scrollmenu {
+				display: none;
+			}
 
 		/* Banner */
 

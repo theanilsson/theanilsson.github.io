@@ -49,6 +49,20 @@
 					<p>Gameplay & Systems Programmer</p>
 				</section>
 
+				<!-- Scrollmenu -->
+					<section id="scrollmenu">
+						<p>Content:</p>
+						<ul>
+							<li><a href="#summary">Summary</a></li>
+							<li><a href="#howitworks">How It Works</a></li>
+							<li><a href="#algorithms">The Algorithms</a></li>
+							<li><a href="#rules">The Rules</a></li>
+							<li><a href="#usecases">Use Cases</a></li>
+							<li><a href="#showcase">Showcase</a></li>
+						</ul>	
+						<a id="backtotop" href="#banner">↑ Back to top</a>
+					</section>
+
 			<!-- Main -->
 			<section id="main" class="container" style="padding-top: 1em; padding-bottom: 0em;">
 				<section class="box special" style="padding: 2em 0 2em 0;">
@@ -58,6 +72,7 @@
 					</header>
 					<span class="image featured" style="width: auto; display: contents;"><img src="images/Heatmap full.gif" alt="" style="width: -webkit-fill-available; justify-self: center; margin: 1.5em 0 2em 0; border-top: #ffffff50 1px solid; border-bottom: #ffffff50 1px solid;"/></span>
 
+					<div class="scrollnavitem" id="summary"></div>
 					<ul class="actions special" style="margin-bottom: 0;">
 						<li><a href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps" target="_blank" class="button alt" style="display: flex;">View the implementation on GitHub<p class="fab fa-github" style="margin: 0 0 0 0.5em; font-size: xx-large; display: flex; align-self: anchor-center;"></p></a></li>
 					</ul>
@@ -67,6 +82,7 @@
 					<h4 style="text-align: left; color: #FFC500;">Summary</h4>
 					<p style="text-align: left; margin-bottom: 1em;">Heatmaps are the core of my simulator's systems. A Heatmap is usually implemented using a graph data structure of some kind, spanning the area of the game world you want to track activity in, where each graph node tracks activity at that point of the graph as "heat" on their part of the "map". <b class="hover_img"><a style="color: #FF7FE8;">In my implementation, each Heatmap consists of a 2D grid of cells (🔍)<span><img src="images/Heatmap grid.png" alt="image" style="width: auto; max-width: 50em;"/></span></a></b> that track a floating-point heat value between 0 and 1. Cell size is adaptable for each Heatmap, allowing some types of data to be collected with more precision (e.g. player positions) and others over a larger area where precision is less important (e.g. strong weather).</p>
 					<p style="text-align: left; margin-bottom: 1em;">I intentionally made the game rounds run much faster than in a typical Battle Royale game to allow for many more simulations while still producing results representative of a longer round. This not only provides a larger dataset to work with but also enables faster testing and iteration on individual simulation components. Additionally, I kept the game objects intentionally simple so I could focus most of my time on developing the Heatmaps and algorithms. The air drops, loot piles, and AI pawns only needed to emit valuable data onto the Heatmaps so that the surrounding systems could function properly.</p>
+					<div class="scrollnavitem" id="howitworks"></div>
 					<p style="text-align: left; margin-bottom: 0px;">Though it would be fun to create AI that behaves like real players in a Battle Royale game (maybe I will in the future), that wasn't the goal of this project. Instead, this project serves as a showcase of how data can be continuously collected and utilized over the course of such a game, as well as how that process can be implemented effectively.</p>
 				</section>
 
@@ -106,6 +122,7 @@
 							<p style="text-align: left; margin-bottom: 0.5em;">The weather system is built on its own Heatmap, but it behaves quite differently from the others. Instead of having heat emitted and diffused based on game events, the weather map is procedurally generated using <b class="highlightedtext">Cellular Automata</b>, a mathematical model used to simulate patterns of replication and decay. Each cell in the Weather Heatmap can be in one of four possible weather states: Clear, Cloudy, Rainy, or Stormy. When the map updates, each cell checks the states of its neighboring cells and, based on rules defined in my algorithm, decides whether to calm down, stay the same, or escalate to a more intense weather state.</p>
 							<p style="text-align: left; margin-bottom: 1em;">To prevent the entire map from settling into a uniform state (such as all cells being Clear or all being Stormy), I biased the algorithm slightly toward escalation. At the same time, I added a small random chance for decay to ensure the system stays dynamic and never truly stabilizes. If you're familiar with <b class="highlightedtext">Conway's Game of Life</b>, that's also a simulation based on Cellular Automata.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Cellular automata.png" alt="" style="width: -webkit-fill-available; max-width: 760px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+							<div class="scrollnavitem" id="algorithms"></div>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Heatmap.cpp#L111" target="_blank">Go to the snippet on GitHub</a>
 						</div>
 					</div>
@@ -134,6 +151,7 @@
 							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.5em 0; margin-bottom: 0;">Cluster Splitting</h5>
 							<p style="text-align: left; margin-bottom: 1em;">Early on in development, I ran into a frustrating issue where narrow channels of cold would snake around hot spots, causing almost the entire grid to be treated as a single cluster. To solve this, I implemented a system for splitting large clusters into smaller, more manageable segments. By defining cluster size limits based on the scale of each sampling algorithm, allowing larger clusters when sampling broader areas, and smaller ones for more localized sampling, I was able to extract more meaningful data and create a simulation that not only performed better but also looked better visually.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Split cluster.png" alt="" style="width: -webkit-fill-available; max-width: 781px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+							<div class="scrollnavitem" id="rules"></div>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Heatmap.cpp#L426" target="_blank">Go to the function on GitHub</a>
 						</div>
 					</div>
@@ -162,6 +180,7 @@
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Preventing Clustering</h5>
+							<div class="scrollnavitem" id="usecases"></div>
 							<p style="text-align: left; margin-bottom: 0;">The safe zone also avoids areas with high death counts to help reduce early-round clustering. This prevents pawns from being funneled into already active hotspots and encourages a more even spread of engagement across the map.</p>
 						</div>
 					</div>
@@ -196,6 +215,7 @@
 					<div class="row">
 						<div class="col-12">
 							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Voronoi Diagrams</h5>
+							<div class="showcase" id="showcase"></div>
 							<p style="text-align: left; margin-bottom: 0;">I had originally planned to add <b class="highlightedtext">procedurally generated Points of Interest using Voronoi Diagrams</b>, but ended up cutting that feature to keep the project within a manageable scope and timeline. Implementing it would have also required introducing simulated geometry into the gameplay, along with collision detection and other systems, which would have pushed the scope far beyond what was realistic for the time I had.</p>
 						</div>
 					</div>
