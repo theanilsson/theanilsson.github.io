@@ -90,37 +90,37 @@
 					<h4 style="text-align: left; color: #FFC500;">How the Simulator Works</h4>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Loot Piles</h5>
-							<p style="text-align: left; margin-bottom: 1em;">Loot piles are static and simple objects in this simulator. They mostly exist because all Battle Royale games have loot on the ground, and they help direct the pawns to do more than just try to kill each other and run to the center of the safe zone. Once picked up by a pawn they emit heat on the Looted Spots Heatmap.</p>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">Loot Piles</h5>
+							<p style="text-align: left; margin-bottom: 1em;">Loot piles are static and simple objects in my simulator. They mostly exist because all Battle Royale games have loot on the ground, and they help direct the pawns to do more than just try to kill each other and run to the center of the safe zone. Once picked up by a pawn they emit heat on the Looted Spots Heatmap.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">AI Pawns</h5>
-							<p style="text-align: left; margin-bottom: 1em;">While alive, pawns continuously emit heat onto the Time Spent In Area Heatmap. Furthermore, pawns are allowed to attempt a series of actions once per second. They kill any other pawns they can reach (emitting Player Deaths heat), pick up any loot they can reach (emitting Looted Spots heat if it was a loot pile), and evaluate whether to orient themselves either toward the nearest pawn or loot within detection range (but out of reach), or away from the edge of the safe zone to try to stay alive. I found that timing their behavioral sequence to once per second was a good sweet spot for emitting valuable data onto the heatmaps and not ending the game round too soon.</p>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">AI Pawns</h5>
+							<p style="text-align: left; margin-bottom: 1em;">The behavior of AI pawns is central to how the simulator generates meaningful Heatmap data. While alive, pawns continuously emit heat onto the Time Spent In Area Heatmap. Furthermore, pawns are allowed to attempt a series of actions once per second. They kill any other pawns they can reach (emitting Player Deaths heat), pick up any loot they can reach (emitting Looted Spots heat if it was a loot pile), and evaluate whether to orient themselves either toward the nearest pawn or loot within detection range (but out of reach), or away from the edge of the safe zone to try to stay alive. I found that timing their behavioral sequence to once per second was a good sweet spot for emitting valuable data onto the heatmaps and not ending the game round too soon.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">The Safe Zone</h5>
-							<p style="text-align: left; margin-bottom: 1em;">The safe zone is defined as a circle shrinking in a certain direction in even intervals spread over the course of the game round. Any pawns caught outside the radius of the safe zone while it's shrinking are instantly killed (emitting Player Deaths heat). When it's time for a new shrinking interval to begin, the simulation samples cold spots from the Player Deaths, Time Spent In Area, Looted Spots and Weather Heatmaps. Using directional vectors from it's current center point toward the sampled cold spots, it then combines those directions after scaling them based on an array of how much each heatmap "weighs" for the purposes of data sampling. Heavier weight meaning it takes more of that direction into account when determining its final shrinking direction.</p>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">The Safe Zone</h5>
+							<p style="text-align: left; margin-bottom: 1em;">A continuously shrinking safe area is core to most battle royale games, and just like in my simulator, it's almost always defined as a circle shrinking in a certain direction in even intervals spread over the course of the game round. Any pawns caught outside the radius of the safe zone while it's shrinking are instantly killed (emitting Player Deaths heat). When it's time for a new shrinking interval to begin, the simulation samples cold spots from the Player Deaths, Time Spent In Area, Looted Spots and Weather Heatmaps. Using directional vectors from it's current center point toward the sampled cold spots, it then combines those directions after scaling them based on an array of how much each Heatmap "weighs" for the purposes of data sampling. Heavier weight meaning it takes more of that direction into account when determining its final shrinking direction.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Safe zone shrinking.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Simulation.cpp#L299" target="_blank">Go to the function on GitHub</a>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin-top: 3em;">Air Drops 🔍</h5><span><img src="images/Heatmap airdrops.gif" alt="image" style="width: auto; max-width: 50em;" /></span></a></div>
-							<p style="text-align: left; margin-bottom: 1em;">Air drops are similar to loot piles. They too mostly exist to alter the behavior of the pawns and emit valuable heat data. New air drops spawn in the coldest cluster within the current safe zone. This usually means that the drop is positioned as far as possible from previous air drops without being placed at the very edge of the safe zone. They spawn "in the air", first emitting heat on the Air Drops Heatmap, then drifting over time based on the direction of the wind sampled from the Weather Heatmap until they "land" and are able to be looted by pawns.</p>
+							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin: 3em 0 0.25em 0;">Air Drops 🔍</h5><span><img src="images/Heatmap airdrops.gif" alt="image" style="width: auto; max-width: 50em;" /></span></a></div>
+							<p style="text-align: left; margin-bottom: 1em;">Air drops are similar to loot piles. They too mostly exist to alter the behavior of the pawns and emit valuable heat data. New air drops spawn in the coldest cluster within the current safe zone. This usually means that the drop is positioned as far as possible from previous drops without being placed at the very edge of the safe zone. They spawn "in the air", first emitting heat on the Air Drops Heatmap, then drifting over time based on the direction of the wind sampled from the Weather Heatmap until they "land" and are able to be looted by pawns.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Airdrop spawning.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Simulation.cpp#L316" target="_blank">Go to the function on GitHub</a>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin-top: 3em;">The Procedurally Generated Weather System 🔍</h5><span><img src="images/Heatmap weather.gif" alt="image" style="width: auto; max-width: 50em;" /></span></a></div>
-							<p style="text-align: left; margin-bottom: 0.5em;">The weather system is built on its own Heatmap, but it behaves quite differently from the others. Instead of having heat emitted and diffused based on game events, the weather map is procedurally generated using <b class="highlightedtext">Cellular Automata</b>, a mathematical model used to simulate patterns of replication and decay. Each cell in the Weather Heatmap can be in one of four possible weather states: Clear, Cloudy, Rainy, or Stormy. When the map updates, each cell checks the states of its neighboring cells and, based on rules defined in my algorithm, decides whether to calm down, stay the same, or escalate to a more intense weather state.</p>
-							<p style="text-align: left; margin-bottom: 1em;">To prevent the entire map from settling into a uniform state (such as all cells being Clear or all being Stormy), I biased the algorithm slightly toward escalation. At the same time, I added a small random chance for decay to ensure the system stays dynamic and never truly stabilizes. If you're familiar with <b class="highlightedtext">Conway's Game of Life</b>, that's also a simulation based on Cellular Automata.</p>
+							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin: 3em 0 0.25em 0;">The Procedurally Generated Weather System 🔍</h5><span><img src="images/Heatmap weather.gif" alt="image" style="width: auto; max-width: 50em;" /></span></a></div>
+							<p style="text-align: left; margin-bottom: 0.5em;">The weather system is another dynamic component to the simulator that impacts gameplay and Heatmap evolution. It's built on its own Heatmap, but it behaves quite differently from the others. Instead of having heat emitted and diffused based on game events, the weather map is procedurally generated using <b class="highlightedtext">Cellular Automata</b> (a mathematical model used to simulate patterns of replication and decay). Each cell in the Weather Heatmap can at any given time be in one of four possible weather states: Clear, Cloudy, Rainy, or Stormy. When the map updates, each cell checks the states of its neighboring cells and, based on rules defined in my algorithm, decides whether to calm down, stay the same, or escalate to a more intense weather state.</p>
+							<p style="text-align: left; margin-bottom: 1em;">To prevent the entire map from settling into a uniform state (such as all cells being Clear or all Stormy), I biased the algorithm slightly toward escalation. At the same time, I added a small random chance for decay to ensure the system stays dynamic and never truly stabilizes. If you're familiar with <b class="highlightedtext">Conway's Game of Life</b>, that's also a simulation based on Cellular Automata.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Cellular automata.png" alt="" style="width: -webkit-fill-available; max-width: 760px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<div class="scrollnavitem" id="algorithms"></div>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Heatmap.cpp#L111" target="_blank">Go to the snippet on GitHub</a>
@@ -132,7 +132,7 @@
 					<h4 style="text-align: left; color: #FFC500;">The Heat Sampling Algorithms</h4>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Breadth-First Search (BFS)</h5>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">Breadth-First Search (BFS)</h5>
 							<p style="text-align: left; margin-bottom: 1em;">To identify clusters of hot or cold cells, my algorithms use <b class="highlightedtext">Breadth-First Search</b> to group together neighboring cells that meet specific heat thresholds, at or below a defined value for cold clusters, and at or above it for hot clusters. A set of visited cells is maintained throughout the search to avoid evaluating the same cell more than once. This sampling method relies on meaningful heat distribution across the Heatmaps. If the grid is overwhelmingly hot or cold, the entire map could end up being treated as a single massive cluster, reducing the usefulness of the data. To address this issue, I also implemented a technique of cluster splitting, which I cover in more detail later in this section.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Breadth first search.png" alt="" style="width: -webkit-fill-available; max-width: 956px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Heatmap.cpp#L206" target="_blank">Go to the snippet on GitHub</a>
@@ -140,7 +140,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.5em 0; margin-bottom: 0;">Limiting the Sample to a Radius</h5>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.25em 0; margin-bottom: 0;">Limiting the Sample to a Radius</h5>
 							<p style="text-align: left; margin-bottom: 1em;">For algorithms requiring samples from within a certain area, I developed a more specialized version of my first sampling algorithm. In this new version I use a position and a radius as input parameters, calculating indices to visit during my Breadth-First Search using the radius and eliminating edge cells using radius squared distance checks.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Using radius for indices.png" alt="" style="width: -webkit-fill-available; max-width: 753px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Heatmap.cpp#L325" target="_blank">Go to the snippet on GitHub</a>
@@ -148,8 +148,8 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.5em 0; margin-bottom: 0;">Cluster Splitting</h5>
-							<p style="text-align: left; margin-bottom: 1em;">Early on in development, I ran into a frustrating issue where narrow channels of cold would snake around hot spots, causing almost the entire grid to be treated as a single cluster. To solve this, I implemented a system for splitting large clusters into smaller, more manageable segments. By defining cluster size limits based on the scale of each sampling algorithm, allowing larger clusters when sampling broader areas, and smaller ones for more localized sampling, I was able to extract more meaningful data and create a simulation that not only performed better but also looked better visually.</p>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.25em 0; margin-bottom: 0;">Cluster Splitting</h5>
+							<p style="text-align: left; margin-bottom: 1em;">Early on in development, I ran into a frustrating issue where narrow channels of cold would snake around hot spots, causing almost the entire grid to be treated as a single cluster. To solve this, I implemented a system for splitting large clusters into smaller, more manageable segments. By defining cluster size limits based on the scale of each sampling algorithm, allowing larger clusters when sampling broader areas, and smaller ones for more localized sampling, I was able to extract more meaningful data and create a simulation that not only performed better but also looked better.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Split cluster.png" alt="" style="width: -webkit-fill-available; max-width: 781px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<div class="scrollnavitem" id="rules"></div>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Battle-Royale-Simulation-Using-Heatmaps/blob/main/code/Heatmap.cpp#L426" target="_blank">Go to the function on GitHub</a>
@@ -161,27 +161,27 @@
 					<h4 style="text-align: left; color: #FFC500;">My Thoughts When Determining the Rules of the Simulation</h4>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Avoiding Predictability</h5>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">Avoiding Predictability</h5>
 							<p style="text-align: left; margin-bottom: 1em;">A common problem in competitive games is predictability. Players like to learn the rules of the game to try to figure out better areas to go to or where the safe zone is going to move ahead of time. I wanted to try to develop a kind of solution to that problem using game events that actively adapt to the state of the game round and each player's actions. That way, even skilled players with great pattern recognition can't predict what's going to happen next, keeping every round fresh and uncertain.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Leveling the Playing Field</h5>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">Leveling the Playing Field</h5>
 							<p style="text-align: left; margin-bottom: 1em;">Staying in the same spot for too long can give players an edge in both survival and combat. To mitigate this, the safe zone actively avoids areas where pawns have lingered, encouraging movement and reducing the effectiveness of camping strategies. Likewise, it avoids regions where a lot of loot has been picked up, preventing already well-equipped pawns from gaining even more of a positional advantage. The same approach is applied to air drop spawns, with new drops steering clear of previous drop zones to discourage repeat looting and keep the competition balanced.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Producing Varied Results</h5>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">Producing Varied Results</h5>
 							<p style="text-align: left; margin-bottom: 1em;">To encourage more variation between simulation rounds and to generate more diverse results, objects in each new round avoid spawning in the same locations as the previous one. <b class="hover_img"><a>New loot piles spawn away from areas where loot was picked up (🔍)<span><img src="images/Heatmap lootspawns avoiding heat.gif" alt="image" style="width: auto; max-width: 50em;"/></span></a></b>, <b class="hover_img"><a>and AI pawns spawn in different locations than last round (🔍)<span><img src="images/Heatmap playerspawns avoiding heat.gif" alt="image" style="width: auto; max-width: 50em;"/></span></a></b>.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Preventing Clustering</h5>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">Preventing Clustering</h5>
 							<div class="scrollnavitem" id="usecases"></div>
-							<p style="text-align: left; margin-bottom: 0;">The safe zone also avoids areas with high death counts to help reduce early-round clustering. This prevents pawns from being funneled into already active hotspots and encourages a more even spread of engagement across the map.</p>
+							<p style="text-align: left; margin-bottom: 0;">Because I wanted to avoid funneling pawns into already active hotspots, and to encourage a more even spread of engagement across the map, I decided to make the safe zone avoid areas with high death counts to help reduce early-round clustering.</p>
 						</div>
 					</div>
 				</section>
@@ -190,33 +190,33 @@
 					<h4 style="text-align: left; color: #FFC500;">Applicable Use Cases and Further Possibilities</h4>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Tools for Designers</h5>
-							<p style="text-align: left; margin-bottom: 1em;">If a system like this were integrated into a real game environment, with heatmap parameters and sampling algorithms exposed through an editor or runtime developer tools, it could offer a wide range of possibilities for UI, level, and game designers. It would give them fine-grained control over how events in the game world evolve, and provide powerful new tools for balancing and adding depth to gameplay.</p>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">Tools for Designers</h5>
+							<p style="text-align: left; margin-bottom: 1em;">If a system like this were integrated into a real game environment, with Heatmap and sampling algorithm parameters exposed through an editor or runtime developer tools, it could offer a wide range of possibilities for UI, level, and game designers. It would give them fine-grained control over how events in the game world evolve, and provide powerful new tools for balancing and adding depth to gameplay.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Map Events</h5>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">Map Events</h5>
 							<p style="text-align: left; margin-bottom: 1em;">A system like this could be seamlessly integrated into the UI of many different game genres. Even within the Battle Royale genre alone, the potential applications are numerous. For example, the Time Spent In Area Heatmap could be used to display indicators that hint at player presence in a given area. Similarly, the Weather Heatmap could drive visualizations like air current flow on the map using sprites or visual effects.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Better Weather System</h5>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">Better Weather System</h5>
 							<p style="text-align: left; margin-bottom: 1em;">There's a lot of potential in further developing the weather system. I originally added it because it fit the theme of the simulation and gave me a chance to revisit procedural generation. There's still plenty of room to refine it, such as implementing realistic air current propagation across the map, rather than simply treating the coldest point as the direction winds are blowing toward. Overall, I'd like the system to behave more like real weather, rather than the chaotic back-and-forth between stormy and clear conditions that currently plays out during the simulation.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Advanced AI</h5>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">Advanced AI</h5>
 							<p style="text-align: left; margin-bottom: 1em;">With more time invested in the project, the AI could be significantly improved to feel much more intelligent and dynamic. They could use <b class="highlightedtext">Finite State Machines or Behavior Trees to improve decision-making, and incorporate Steering Behaviors</b> influenced by data from various Heatmaps. Their choices could adapt in real time by adjusting decision weights based on sampled data. They could also be given visibility ranges, affected by factors like weather, to create more realistic perception and behavior.</p>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Voronoi Diagrams</h5>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">Voronoi Diagrams</h5>
 							<div class="showcase" id="showcase"></div>
-							<p style="text-align: left; margin-bottom: 0;">I had originally planned to add <b class="highlightedtext">procedurally generated Points of Interest using Voronoi Diagrams</b>, but ended up cutting that feature to keep the project within a manageable scope and timeline. Implementing it would have also required introducing simulated geometry into the gameplay, along with collision detection and other systems, which would have pushed the scope far beyond what was realistic for the time I had.</p>
+							<p style="text-align: left; margin-bottom: 0;">I had originally planned to add <b class="highlightedtext">procedurally generated Points of Interest using Voronoi Diagrams</b> (a method for partitioning a space into cells based on distance to a set of seed points), but ended up cutting that feature to keep the project within a manageable scope and timeline. Even if I had implemented it, for the Points of Interest to have meaningful impact, I would have had to introduce simulated geometry and collision detection into the game world, along with more work on the AI, and I just decided that adding all that would have pushed the scope far beyond what was realistic for the time that I had.</p>
 						</div>
 					</div>
 				</section>
