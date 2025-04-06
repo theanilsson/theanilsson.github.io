@@ -57,6 +57,7 @@
 							<li><a href="#background">Background</a></li>
 							<li><a href="#astar">A-Star</a></li>
 							<li><a href="#funneling">Funneling</a></li>
+							<li><a href="#showcase">Showcase</a></li>
 						</ul>	
 						<a id="backtotop" href="#banner">↑ Back to top</a>
 					</section>
@@ -78,15 +79,15 @@
 				<section class="box special">
 					<h4 style="text-align: left; color: #FFC500;">Summary</h4>
 					<div class="scrollnavitem" id="background"></div>
-					<p style="text-align: left; margin-bottom: 0;">NavMesh is short for navigation mesh. Essentially it's an object that isn't meant to be rendered in the game, made up entirely of polygons sharing at least one edge with the other polygons in the mesh, to be used for finding viable paths between two points in a game world. Most commonly this is done to help AI actors (even if indirectly player controlled) navigate in the game world. NavMesh pathfinding is an essential component to many modern games and A-star is both one of the most efficient and common algorithms used for finding such paths. Once a viable path has been found, regardless which algorithm was used to find it, a smoothing (in this case funneling) algorithm is needed to make the path both more efficient and better looking. This is because pathfinding algorithms usually only find the shortest path via centerpoints of polygons, not the actual shortest path between the start and end points. An actor wandering centerpoint to centerpoint would not only look strange doing so, but also take far longer to get to its goal than it needed to.</p>
+					<p style="text-align: left; margin-bottom: 0;">NavMesh, short for navigation mesh, is a non-rendered object in a game world composed entirely of convex polygons (closed 2D shapes with three or more outward-pointing sides). These polygons are connected by shared edges, forming a mesh that enables the calculation of viable paths between two points. This system is primarily used to help AI-controlled (or indirectly player-controlled) characters navigate the environment. NavMesh pathfinding is a core component in many modern games, with the A-Star algorithm being one of the most popular and efficient methods for determining these paths. Once a viable path has been found, regardless which algorithm was used to find it, a smoothing algorithm (in this case funneling) is needed to make the path both more efficient and better looking. This is because pathfinding algorithms usually only find the shortest path via centerpoints of polygons, not the actual shortest path between the start and end points. An actor wandering centerpoint to centerpoint would not only look strange doing so, but also take far longer to get to its goal than it needed to.</p>
 				</section>
 
 				<section class="box special">
 					<h4 style="text-align: left; color: #FFC500;">From Curiosity to Requirement</h4>
-					<p style="text-align: left; margin-bottom: 1em;">I developed the original version of my pathfinding implementation as part of one of my assignments studying algorithms and data structures during spring 2024 at TGA. That initial version got a passing grade despite being very unoptimized and having no smoothing algorithm to speak of. Even so, it piqued my interest both in AI at large and specifically in the algorithms commonly used in AI. So I decided to dive deeper into the subject of pathfinding and hone my skills to write a more advanced and optimized implementation later down the line.</p>
-					<p style="text-align: left; margin-bottom: 1em;">When I found some spare time during summer I tried my hand at implementing a smoothing algorithm to go along with the pathfinding, and succeeded with a basic (and inefficient) version using midpoints between triangle centerpoints to make a better looking path. However, once I started using this version in a project of larger size than where I developed it, I quickly realized it would not be good enough if used for more than a few actors at once. It was full of inefficient memory allocations and unnecessary loops over large collections. This along with finding out a few weeks later that an efficient smoothing algorithm would be a requirement in a later group project gave me the resolve I needed to optimize both the pathfinding algorithm itself and the subsequent smoothing algorithm. A week later, after multiple iterations on my pathfinding algorithm and time spent writing a new smoothing algorithm from scratch, I succeeded in producing the algorithms shown here.</p>
+					<p style="text-align: left; margin-bottom: 1em;">During the spring of my first year at TGA we had a course called "Datastructures and Algorithms", where one of the assignments was to implement a pathfinding algorithm usable on both NavMeshes and 2D grids. Even though the initial version I made as part of that assignment was very unoptimized and had no smoothing algorithm to speak of, the assignment sparked a curiosity in me regarding game AI as a broader field and especially the algorithms that drive intelligent behavior. That curiosity stayed with me, pushing me to explore pathfinding more deeply and refine my skills outside the classroom.</p>
+					<p style="text-align: left; margin-bottom: 1em;">During the summer, with some extra free time on my hands, I revisited the project and challenged myself to implement a basic smoothing algorithm. My first attempt was rudimentary, relying on midpoints between triangle centerpoints to create smoother paths, but it served its purpose as a proof of concept. However, once I started using that version in a larger project, I quickly realized it couldn't be used for more than a few actors at a time without bogging down performance. It was full of inefficient memory allocations and unnecessary loops over large collections. Around the same time, I also found out that an efficient smoothing algorithm would be a requirement in a later group project. With a new sense of urgency, I committed myself to reworking the entire system. Over the course of a week, I iterated repeatedly on the pathfinding logic and rewrote the smoothing algorithm from the ground up. The result, as seen on this page, was a far more efficient and scalable solution, one that could meet the performance needs of more demanding projects.</p>
 					<div class="scrollnavitem" id="astar"></div>
-					<p style="text-align: left; margin-bottom: 0;">In my opinion, the biggest flaw of my implementation is that it isn't <b class="highlightedtext">thread safe</b>, but I know exactly which modifications I would need to do to make it so if I were to encounter a situation where I need to thread it. My focus when optimizing these algorithms has been to <b class="highlightedtext">make better use of the cache</b>, <b class="highlightedtext">reduce memory overhead</b> and <b class="highlightedtext">eliminate redundant iterations</b>.</p>
+					<p style="text-align: left; margin-bottom: 0;">In my opinion, the biggest flaw of my implementation is that it isn't <b class="highlightedtext">thread safe</b>, but I know exactly which modifications I would need to make for it to be thread safe if I were to encounter a situation where I need it to be. My focus when optimizing my implementation has instead been to <b class="highlightedtext">make better use of the cache</b>, <b class="highlightedtext">reduce memory overhead</b> and <b class="highlightedtext">eliminate redundant iterations</b>.</p>
 				</section>
 
 				<section class="box special">
@@ -102,7 +103,7 @@
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Astar frontier setup.png" alt="" style="width: -webkit-fill-available; max-width: 716px; justify-self: center; padding: 0 0 0 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Astar-Navmesh-Pathfinding-and-Funneling/blob/main/code/NavMesh.cpp#L143" target="_blank">Go to the snippet on GitHub</a>
 
-							<p style="text-align: left; margin: 2em 0 1em 0;">If the algorithm traverses all nodes by shared edges originating from the start node without reaching its goal, the algorithm fails. This can only happen if a NavMesh was fed to the algorithm where not all triangles share an edge. It could also happen <b class="highlightedtext">if I were to implement a way to make nodes untraversable</b> (driven by gameplay), signifying a blocked or otherwise obstructed path.</p>
+							<p style="text-align: left; margin: 2em 0 1em 0;">If the algorithm traverses all nodes by shared edges originating from the start node without reaching its goal, the algorithm fails. This can only happen if a NavMesh was fed to the algorithm where not all triangles share an edge. It could also happen if I were to implement <b class="highlightedtext">a way to make nodes untraversable (driven by gameplay), signifying a blocked or otherwise obstructed path.</b></p>
 							<p style="text-align: left; margin-bottom: 1em;">If the algorithm succeeds in traversing its way to the end node however, it constructs a collection consisting of the shortest path of nodes used to reach the end node from the start node. Using this collection it then constructs a collection of "portals". Portals are synonymous with edges, consisting of two of the triangle's three vertices. The only difference is that a portal has to be an edge the actor would need to walk through to traverse along the path to reach the end. These portals are then fed to the funneling algorithm to produce the final smooth path. <b class="hover_img"><a>The resulting path before any funneling is applied is displayed as the pink line in the visualization shown when hovering over this sentence.<span><img src="images/Astar without funneling.png" alt="image" style="width: auto; max-width: 40em;"/></span></a></b></p>
 
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Astar found path.png" alt="" style="width: -webkit-fill-available; max-width: 1007px; justify-self: center; padding: 0 0 0 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
@@ -127,9 +128,36 @@
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Astar-Navmesh-Pathfinding-and-Funneling/blob/main/code/NavMesh.cpp#L287" target="_blank">Go to the snippet on GitHub</a>
 							<p style="text-align: left; margin: 1em 0 1em 0;">Then the traversing of the path of portals begins. Stepping along the sorted path of portals, the algorithm checks if the portal's left point is a better left point for the funnel to use without overshooting the right point, and vice versa for the right portal point to the right funnel point. If the left or right points of the portal were to make the funnel overshoot (meaning the right point of the funnel would be to the left of the left point or vice versa), that means a corner for the final smooth path has been found and the algorithm should define a new funnel apex and new left and right points using the next portal following the one where the corner point was found on. Once the iteration reaches the final portal, the best smooth path has always been found and we can allow the actor to traverse along it. <b class="hover_img"><a>The resulting smoothed path is displayed as the pink line in the visualization shown when hovering over this sentence.<span><img src="images/Astar funneled.png" alt="image" style="width: auto; max-width: 40em;"/></span></a></b></p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Astar funneling iterations.png" alt="" style="width: -webkit-fill-available; max-width: 636px; justify-self: center; padding: 0 0 0 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
+							<div class="scrollnavitem" id="showcase"></div>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Astar-Navmesh-Pathfinding-and-Funneling/blob/main/code/NavMesh.cpp#L336" target="_blank">Go to the snippet on GitHub</a>
 						</div>
 					</div>
+				</section>
+
+				<section class="box special">
+					<div class="row">
+						<div class="col-12">
+							<h4 style="text-align: left; color: #FFC500;">Used in Projects</h4>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">The initial unoptimized version used on a 2D grid in our 4th group project</h5>
+							<span class="image featured" style="width: auto; display: contents;"><img src="images/Grid pathfinding.gif" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 2em 0;"/></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">The optimized and funneled version converted to work in 3D and used on a NavMesh in our 6th group project</h5>
+							<span class="image featured" style="width: auto; display: contents;"><img src="images/EnemySystemShowcase.gif" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 0 0;"/></span>
+						</div>
+					</div>
+					<!-- <div class="row">
+						<div class="col-12">
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">The optimized and funneled version converted to 3D and used on a NavMesh in our 7th group project</h5>
+							<span class="image featured" style="width: auto; display: contents;"><img src="images/EnemySystemShowcase.gif" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 0 0;"/></span>
+						</div>
+					</div> -->
 				</section>
 
 				<section class="box special">
