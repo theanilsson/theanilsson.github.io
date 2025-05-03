@@ -54,6 +54,7 @@
 					<section id="scrollmenu">
 						<p>Content:</p>
 						<ul>
+							<li><a href="#summary">Summary</a></li>
 							<li><a href="#showcase">Showcase</a></li>
 						</ul>	
 						<a id="backtotop" href="#banner">↑ Back to top</a>
@@ -68,10 +69,16 @@
 					</header>
 					<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapShowcase.gif" alt="" style="width: -webkit-fill-available; justify-self: center; margin: 1.5em 0 2em 0; border-top: #ffffff50 1px solid; border-bottom: #ffffff50 1px solid;"/></span>
 
-					<div class="scrollnavitem" id="showcase"></div>
+					<div class="scrollnavitem" id="summary"></div>
 					<ul class="actions special" style="margin-bottom: 0;">
 						<li><a href="https://github.com/theanilsson/Dynamic-Minimap-Generation-via-World-LOD-Grid" target="_blank" class="button alt" style="display: flex;">View the implementation on GitHub<p class="fab fa-github" style="margin: 0 0 0 0.5em; font-size: xx-large; display: flex; align-self: anchor-center;"></p></a></li>
 					</ul>
+				</section>
+
+				<section class="box special">
+					<h4 style="text-align: left; color: #FFC500;">Summary</h4>
+					<div class="scrollnavitem" id="showcase"></div>
+					<p style="text-align: left; margin-bottom: 0px;">Using a runtime-generated 2D grid, derived from the extents of the level geometry, this system orthographically projects the environment onto a texture that spans the entire grid. That texture then serves as the basis for rendering accurate map topology (e.g. height data) and is dynamically culled in an HLSL shader based on the minimap's current radius relative to the player's world position. The much smaller minimap then translates its 0-1 UV coordinates to the corresponding region of the full world texture, ensuring correct scale and orientation on the HUD, while also adjusting the position and scale of any sprites placed within the minimap context.</p>
 				</section>
 
 				<section class="box special">
