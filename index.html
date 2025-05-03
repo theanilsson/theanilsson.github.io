@@ -18,6 +18,7 @@
 							<li>
 								<a href="#">Personal Work Highlights<i class="icon solid fab fa-angle-down" style="color: #fff; padding-left: 0.25em;"></i></a>
 								<ul>
+									<li><a href="minimap.html">Dynamic Minimap Generation via World LOD Grid</a></li>
 									<li><a href="specialization.html">Battle Royale Simulation Using Heatmaps</a></li>
 									<li><a href="movement.html">Advanced PhysX Based FPS Movement</a></li>
 									<li><a href="enemysystem.html">Diablo 3 Inspired Enemy AI System</a></li>
@@ -52,6 +53,20 @@
 
 			<!-- Main -->
 				<section id="main" class="container" style="padding-top: 1em; padding-bottom: 1.5em;">
+					<div class="row" style="margin-bottom: 0em; margin-left: -1em;">
+						<div class="col-12" style="padding-left: 1em;">
+							
+							<section class="box special frontpage">		
+								<a href="minimap.html" class="frontpageanchor"><h3 style="color: #FFC500; margin-bottom: 0em;">Dynamic Minimap Generation via World LOD Grid</h3></a>
+								<h6 style="color: #FF7FE8;">(Work in progress for <a href="groupprojects.html#echoesinthemurk" class="highlightpageanchor2">Echoes in the Murk</a>)</h6>
+								<span class="image featured frontpage"><img src="images/MinimapShowcase.gif" alt=""/></span>
+								<p>Using a runtime-generated 2D grid, derived from the extents of the level geometry, this system orthographically projects the environment onto a texture that spans the entire grid. That texture then serves as the basis for rendering accurate map topology (e.g. height data) and is dynamically culled in an HLSL shader based on the minimap's current radius relative to the player's world position. The much smaller minimap then translates its 0-1 UV coordinates to the corresponding region of the full world texture, ensuring correct scale and orientation on the HUD, while also adjusting the position and scale of any sprites placed within the minimap context.</p>
+								<ul class="actions special" style="margin-bottom: 2em;">
+									<li><a href="minimap.html" class="button alt">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
 					<div class="row" style="margin-bottom: -1em; margin-left: -1em;">
 						<div class="col-12" style="padding-left: 1em;">
 							
