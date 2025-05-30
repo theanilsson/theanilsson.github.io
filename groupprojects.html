@@ -55,7 +55,8 @@
 						<p>Content:</p>
 						<ul>
 							<li><a href="#echoesinthemurk">Echoes in the Murk</a></li>
-							<li><a href="#blacksitedeephorizon">Blacksite: Deep Horizon</a></li>
+							<li><a href="#humantakeout">Human Takeout</a></li>
+							<li><a href="#blacksitedeephorizon">Blacksite</a></li>
 							<li><a href="#orderoftheroses">Order of the Roses</a></li>
 							<li><a href="#oldprojects">Old Projects</a></li>
 						</ul>	
@@ -80,6 +81,7 @@
 									<div class="col-12">
 										<h3 class="cardheader">Echoes in the Murk (under development)</h3>
 										<ul class="carddetails">
+											<li><div>Type:</div> School Project</li>
 											<li><div>Genre:</div> Isometric Co-op Action Adventure</li>
 											<li><div>Reference game:</div> Ship of Fools</li>
 											<li><div>Timeframe:</div> 7 weeks (35-40hrs/week)</li>
@@ -89,18 +91,55 @@
 										</ul>
 									</div>
 									<div class="col-12">
-										<h4 class="cardsubheader">My Main Contributions (planned so far):</h4>
+										<h4 class="cardsubheader">My Main Contributions:</h4>
 										<ul class="cardbulletlist">
 											<li>Universal gamepad support using SDL3</li>
 											<li>Wwise SDK setup & implementation</li>
-											<li>Minimap system with dynamic Points of Interest and culling radius</li>
-											<li>Heatmap and world Level of Detail system</li>
+											<li>Respawning, checkpoint, and out of bounds functionality</li>
+											<li class="hover_img hover_img_link"><a href="minimap.html">Minimap system with dynamic enemy indicators, points of interest, scaling, and culling 🔗<span><img src="images/MinimapShowcase.gif" alt="image" style="height: 15em;" /></span></a></li>
+											<li>Heatmap & world LoD system</li>
 											<li>Continued development of my deferred rendering decal system</li>
-											<div class="scrollnavitem" id="blacksitedeephorizon"></div>
-											<li>UI programming and state stack management</li>
+											<li>Light & shadow programming (dynamic mapping, smooth transitions, performance improvements, etc.)</li>
+											<div class="scrollnavitem" id="humantakeout"></div>
+											<li>UI programming & state stack management</li>
 										</ul>
 									</div>
 								</div>
+							</section>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12">
+							<section class="box special" style="padding-bottom: 2em;">
+								<span class="image featured"><img src="images/HumanTakeout_ScreenshotBanner.png" style="height: 14em; margin-bottom: 2em; object-fit: cover;" alt=""/></span>
+								<div class="row">
+									<div class="col-12">
+										<h3 class="cardheader">Human Takeout: Catch a Meal</h3>
+										<ul class="carddetails">
+											<li><div>Type:</div> Game Jam</li>
+											<li><div>Genre:</div> Isometric PvP Party Game</li>
+											<li><div>Theme:</div> "Catch"</li>
+											<li><div>Timeframe:</div> 2.5 days (~8hrs/day)</li>
+											<li><div>Team:</div> 2 programmers, 2 graphical artists, 2 level designers</li>
+											<li><div>Engine:</div> Unreal Engine</li>
+										</ul>
+									</div>
+									<div class="col-12">
+										<h4 class="cardsubheader">My Main Contributions:</h4>
+										<ul class="cardbulletlist">
+											<li>Dynamic camera movement & zoom level functionality</li>
+											<li>Player controller functionality</li>
+											<li>Player & input UI indicators (functionality + art)</li>
+											<li>Environmental lighting tweaks</li>
+											<li>Bugfixing assistance for those working on the AI</li>
+										</ul>
+									</div>
+								</div>
+								<div class="scrollnavitem" id="blacksitedeephorizon"></div>
+								<ul class="actions special" style="margin: 1.5em 0 1em 0;">
+									<li><a href="https://theanilsson.itch.io/human-takeout" target="_blank" class="button alt">Visit our itch.io page to download & play</a></li>
+								</ul>
 							</section>
 						</div>
 					</div>
@@ -113,6 +152,7 @@
 									<div class="col-12">
 										<h3 class="cardheader">Blacksite: Deep Horizon</h3>
 										<ul class="carddetails">
+											<li><div>Type:</div> School Project</li>
 											<li><div>Genre:</div> First Person Shooter & Wave Defense</li>
 											<li><div>Reference game:</div> Titanfall 2</li>
 											<li><div>Timeframe:</div> 14 weeks (20hrs/week)</li>
@@ -125,12 +165,12 @@
 										<h4 class="cardsubheader">My Main Contributions:</h4>
 										<ul class="cardbulletlist">
 											<li>PhysX implementation & simulation management</li>
-											<li>Generation of PhysX geometric shapes and triangle meshes based on level geometry</li>
-											<li class="hover_img hover_img_link"><a href="movement.html">Player controller structure and PhysX based movement system 🔗<span><img src="images/FpsMovement_SlingSurfSlideSling.gif" alt="image" style="height: 15em;" /></span></a></li>
-											<li>Light and shadow programming (smooth shadows, ambient light fade, reducing banding issues, etc.)</li>
+											<li>Generation of PhysX geometric shapes & triangle meshes based on level geometry</li>
+											<li class="hover_img hover_img_link"><a href="movement.html">Player controller structure & PhysX based movement system 🔗<span><img src="images/FpsMovement_SlingSurfSlideSling.gif" alt="image" style="height: 15em;" /></span></a></li>
+											<li>Light & shadow programming (smooth shadows, ambient light fade, reducing banding issues, etc.)</li>
 											<li class="hover_img"><a>Perspective camera view frustum culling 🔍<span><img src="images/Visualized view frustum culling.gif" alt="image" style="height: 17.5em;" /></span></a></li>
 											<li class="hover_img hover_img_link"><a href="decals.html">Deferred rendering decal system 🔗<span><img src="images/DecalsShowcase.gif" alt="image" style="height: 15em;" /></span></a></li>
-											<li>UI programming and state stack management</li>
+											<li>UI programming & state stack management</li>
 											<li>Render pipeline management</li>
 											<li>Directed camera intro</li>
 										</ul>
@@ -152,6 +192,7 @@
 									<div class="col-12">
 										<h3 class="cardheader">Order of the Roses</h3>
 										<ul class="carddetails">
+											<li><div>Type:</div> School Project</li>
 											<li><div>Genre:</div> Isometric Action RPG</li>
 											<li><div>Reference game:</div> Diablo 3</li>
 											<li><div>Timeframe:</div> 10 weeks (20hrs/week)</li>
@@ -163,7 +204,7 @@
 									<div class="col-12">
 										<h4 class="cardsubheader">My Main Contributions:</h4>
 										<ul class="cardbulletlist">
-											<li class="hover_img hover_img_link"><a href="enemysystem.html">Enemy AI with decision tree behavior, group AI, object pooling and factory pattern 🔗<span><img src="images/EnemySystemShowcase.gif" alt="image" style="height: 15em;" /></span></a></li>
+											<li class="hover_img hover_img_link"><a href="enemysystem.html">Enemy AI with decision tree behavior, group AI, object pooling, and factory pattern 🔗<span><img src="images/EnemySystemShowcase.gif" alt="image" style="height: 15em;" /></span></a></li>
 											<li class="hover_img hover_img_link"><a href="pathfinding.html">A-Star NavMesh pathfinding algorithm with funneling 🔗<span><img src="images/PathfindingShowcase.gif" alt="image" style="height: 15em;" /></span></a></li>
 											<li class="hover_img"><a>Projecting 2D mouse coordinates into a 3D game world using a perspective projection camera 🔍<span><img src="images/onscreen picking.gif" alt="image" style="height: 15em;" /></span></a></li>
 											<li class="hover_img"><a>Custom colliders & collision management with runtime visualization 🔍<span><img src="images/collider visualization.png" alt="image" style="height: 15em;" /></span></a></li>
@@ -192,6 +233,7 @@
 									<div class="col-12">
 										<h3 class="cardheader">Carl Off Duty</h3>
 										<ul class="carddetails">
+											<li><div>Type:</div> School Project</li>
 											<li><div>Genre:</div> Isometric Action RPG</li>
 											<li><div>Reference game:</div> Tunic</li>
 											<li><div>Timeframe:</div> 8 weeks (20hrs/week)</li>
@@ -203,10 +245,10 @@
 									<div class="col-12">
 										<h4 class="cardsubheader">My Main Contributions:</h4>
 										<ul class="cardbulletlist">
-											<li>Enemy AI with state machine behavior, object pooling and factory pattern</li>
+											<li>Enemy AI with state machine behavior, object pooling, and factory pattern</li>
 											<li>A-star 2D grid pathfinding algorithm</li>
 											<li>Environmental game objects (e.g. checkpoints, doors, level transition triggers)</li>
-											<li>Animation playback and state management</li>
+											<li>Animation playback & state management</li>
 											<li>SFX & BGM playback using bass</li>
 										</ul>
 									</div>
@@ -220,6 +262,7 @@
 									<div class="col-12">
 										<h3 class="cardheader">Desolate Soul</h3>
 										<ul class="carddetails">
+											<li><div>Type:</div> School Project</li>
 											<li><div>Genre:</div> Side-scrolling(2.5D) Action Platformer</li>
 											<li><div>Reference game:</div> Ori and the Blind Forest</li>
 											<li><div>Timeframe:</div> 12 weeks (20hrs/week)</li>
@@ -234,7 +277,7 @@
 											<li>Player controller</li>
 											<li>Collision management</li>
 											<li>Environmental game objects (e.g. platforming hazards, moving terrain that squishes the player, platforms that allow falling through)</li>
-											<li>Animation playback and state management</li>
+											<li>Animation playback & state management</li>
 										</ul>
 									</div>
 								</div>
@@ -250,6 +293,7 @@
 									<div class="col-12">
 										<h3 class="cardheader">hAIst</h3>
 										<ul class="carddetails">
+											<li><div>Type:</div> School Project</li>
 											<li><div>Genre:</div> Isometric Mobile Puzzler</li>
 											<li><div>Reference game:</div> Lara Croft GO</li>
 											<li><div>Timeframe:</div> 6 weeks (20hrs/week)</li>
@@ -277,6 +321,7 @@
 									<div class="col-12">
 										<h3 class="cardheader">Astro Chase</h3>
 										<ul class="carddetails">
+											<li><div>Type:</div> School Project</li>
 											<li><div>Genre:</div> Infinite Runner & Platformer</li>
 											<li><div>Reference game:</div> Temple Run</li>
 											<li><div>Timeframe:</div> 6 weeks (20hrs/week)</li>
