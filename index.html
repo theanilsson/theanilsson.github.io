@@ -18,7 +18,7 @@
 							<li>
 								<a href="#">Personal Work Highlights<i class="icon solid fab fa-angle-down" style="color: #fff; padding-left: 0.25em;"></i></a>
 								<ul>
-									<li><a href="minimap.html">Dynamic Minimap Generation via World LOD Grid</a></li>
+									<li><a href="minimap.html">Dynamically Generated and UV Mapped Minimap</a></li>
 									<li><a href="specialization.html">Battle Royale Simulation Using Heatmaps</a></li>
 									<li><a href="movement.html">Advanced PhysX Based FPS Movement</a></li>
 									<li><a href="enemysystem.html">Diablo 3 Inspired Enemy AI System</a></li>
@@ -56,10 +56,9 @@
 					<div class="row" style="margin-bottom: 0em; margin-left: -1em;">
 						<div class="col-6 col-12-narrower leftcard" style="padding-left: 1em;">
 							<section class="box special frontpage">		
-								<a href="minimap.html" class="frontpageanchor"><h3 style="color: #FFC500; margin-bottom: 0em;">Dynamic Minimap Generation via World LOD Grid</h3></a>
-								<h6 style="color: #FF7FE8;">(Work in progress for <a href="groupprojects.html#echoesinthemurk" class="highlightpageanchor2" style="font-size: inherit;">Echoes in the Murk</a>)</h6>
+								<a href="minimap.html" class="frontpageanchor"><h3 style="color: #FFC500; margin-bottom: 0em;">Dynamically Generated and UV Mapped Minimap</h3></a>
 								<span class="image featured frontpage"><img src="images/MinimapShowcase.gif" alt=""/></span>
-								<p>Using a runtime-generated 2D grid, derived from the extents of the level geometry, this system orthographically projects the environment onto a texture that spans the entire grid. That texture then serves as the basis for rendering accurate map topology (e.g. height data) and is dynamically culled in an HLSL shader based on the minimap's current radius relative to the player's world position. The much smaller minimap then translates its 0-1 UV coordinates to the corresponding region of the full world texture, ensuring correct scale and orientation on the HUD, while also adjusting the position and scale of any sprites placed within the minimap context.</p>
+								<p>This system continuously projects the static environment near the player onto a texture using top-down orthographic projection. That texture then serves as the basis for rendering accurate map topology (e.g. height data) and is dynamically culled in an HLSL shader based on the minimap's current radius relative to the player's world position. The much smaller minimap then translates its 0-1 UV coordinates to the unculled region of the full environment texture, ensuring correct scale and orientation on the HUD, while also adjusting the position and scale of any other sprites placed within the minimap context.</p>
 								<ul class="actions special" style="margin-bottom: 2em;">
 									<li><a href="minimap.html" class="button alt">Learn More</a></li>
 								</ul>
@@ -68,7 +67,7 @@
 						<div class="col-6 col-12-narrower" style="padding-left: 1em;">
 							<section class="box special frontpage">		
 								<a href="specialization.html" class="frontpageanchor"><h3 style="color: #FFC500; margin-bottom: 0em;">Battle Royale Simulation Using Heatmaps</h3></a>
-								<h6 style="color: #FF7FE8;">(The simulation running below is a GIF image, keybinds will not work)</h6>
+								<h6 style="color: #FF7FE8; margin-bottom: -1.5em;">(The simulation running below is a GIF image, keybinds will not work)</h6>
 								<span class="image featured frontpage"><img src="images/Heatmap full.gif" alt=""/></span>
 								<p>My focus with this project was to showcase a more advanced way to utilize heatmaps than simply for data analysis, which is their most common use case. The project consists of a simulator running in a 2D game world representing the top down map view of a Battle Royale game. The simulator emulates full rounds of a generic Battle Royale game, using custom built algorithms to sample data from an array of heatmaps to control where the safe zone shrinks toward and where to spawn new game objects. The heatmaps are heated up by a procedurally generated weather system, game object spawn locations and the AI pawns' actions during the simulation.</p>
 								<ul class="actions special" style="margin-bottom: 2em;">

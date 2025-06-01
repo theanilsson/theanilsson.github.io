@@ -18,7 +18,7 @@
 							<li>
 								<a href="#">Personal Work Highlights<i class="icon solid fab fa-angle-down" style="color: #fff; padding-left: 0.25em;"></i></a>
 								<ul>
-									<li><a href="minimap.html">Dynamic Minimap Generation via World LOD Grid</a></li>
+									<li><a href="minimap.html">Dynamically Generated and UV Mapped Minimap</a></li>
 									<li><a href="specialization.html">Battle Royale Simulation Using Heatmaps</a></li>
 									<li><a href="movement.html">Advanced PhysX Based FPS Movement</a></li>
 									<li><a href="enemysystem.html">Diablo 3 Inspired Enemy AI System</a></li>
@@ -64,8 +64,7 @@
 			<section id="main" class="container" style="padding-top: 1em; padding-bottom: 0em;">
 				<section class="box special" style="padding: 2em 0 2em 0;">
 					<header class="major" style="padding: 0;">
-						<h2 style="color: #FFC500;">Dynamic Minimap Generation via World LOD Grid</h2>
-						<h6 style="color: #FF7FE8;">(Work in progress for <a href="groupprojects.html#echoesinthemurk" class="highlightpageanchor2" style="font-size: inherit;">Echoes in the Murk</a>)</h6>
+						<h2 style="color: #FFC500;">Dynamically Generated and UV Mapped Minimap</h2>
 					</header>
 					<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapShowcase.gif" alt="" style="width: -webkit-fill-available; justify-self: center; margin: 1.5em 0 2em 0; border-top: #ffffff50 1px solid; border-bottom: #ffffff50 1px solid;"/></span>
 
@@ -78,7 +77,7 @@
 				<section class="box special">
 					<h4 style="text-align: left; color: #FFC500;">Summary</h4>
 					<div class="scrollnavitem" id="showcase"></div>
-					<p style="text-align: left; margin-bottom: 0px;">Using a runtime-generated 2D grid, derived from the extents of the level geometry, this system orthographically projects the environment onto a texture that spans the entire grid. That texture then serves as the basis for rendering accurate map topology (e.g. height data) and is dynamically culled in an HLSL shader based on the minimap's current radius relative to the player's world position. The much smaller minimap then translates its 0-1 UV coordinates to the corresponding region of the full world texture, ensuring correct scale and orientation on the HUD, while also adjusting the position and scale of any sprites placed within the minimap context.</p>
+					<p style="text-align: left; margin-bottom: 0px;">This system continuously projects the static environment near the player onto a texture using top-down orthographic projection. That texture then serves as the basis for rendering accurate map topology (e.g. height data) and is dynamically culled in an HLSL shader based on the minimap's current radius relative to the player's world position. The much smaller minimap then translates its 0-1 UV coordinates to the unculled region of the full environment texture, ensuring correct scale and orientation on the HUD, while also adjusting the position and scale of any other sprites placed within the minimap context.</p>
 				</section>
 
 				<section class="box special">
@@ -97,38 +96,38 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Max Radius Minimap in a Smaller World</h5>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Max Radius Minimap in a Small World</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/MaxRadiusMinimap.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Minimum Radius Minimap in a Smaller World</h5>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Minimum Radius Minimap in a Small World</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinRadiusMinimap.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">World Grid and Map Setup</h5>
-							<span class="image featured" style="width: auto; display: contents;"><img src="images/WorldGridAndMapSetupSnippet.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">World Grid Calculations</h5>
-							<span class="image featured" style="width: auto; display: contents;"><img src="images/WorldGridCalculationSnippet.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Minimap Calculations</h5>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Minimap Setup</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapCalculationSnippet.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Rendering and Culling the Geometry</h5>
-							<span class="image featured" style="width: auto; display: contents;"><img src="images/GeometryRenderSnippet.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 0 0;"/></span>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Rendering the Geometry</h5>
+							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapGeometryRender.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Culling the Rendered Geometry</h5>
+							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapCullingRender.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 0 0;"/></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Final Sprite Render With Runtime UV Mapping</h5>
+							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapSpriteRender.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 0 0;"/></span>
 						</div>
 					</div>
 				</section>
