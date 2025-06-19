@@ -66,18 +66,18 @@
 					<header class="major" style="padding: 0;">
 						<h2 style="color: #FFC500;">Dynamically Generated and UV Mapped Minimap</h2>
 					</header>
-					<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapShowcase.gif" alt="" style="width: -webkit-fill-available; justify-self: center; margin: 1.5em 0 2em 0; border-top: #ffffff50 1px solid; border-bottom: #ffffff50 1px solid;"/></span>
+					<video style="width: -webkit-fill-available; height: auto; margin: 1.5em 0 2em 0;" controls autoplay loop muted preload="auto"><source src="images/MinimapShowcase.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 
 					<div class="scrollnavitem" id="summary"></div>
 					<ul class="actions special" style="margin-bottom: 0;">
-						<li><a href="https://github.com/theanilsson/Dynamic-Minimap-Generation-via-World-LOD-Grid" target="_blank" class="button alt" style="display: flex;">View the implementation on GitHub<p class="fab fa-github" style="margin: 0 0 0 0.5em; font-size: xx-large; display: flex; align-self: anchor-center;"></p></a></li>
+						<li><a href="https://github.com/theanilsson/Dynamically-Generated-and-UV-Mapped-Minimap" target="_blank" class="button alt" style="display: flex;">View the implementation on GitHub<p class="fab fa-github" style="margin: 0 0 0 0.5em; font-size: xx-large; display: flex; align-self: anchor-center;"></p></a></li>
 					</ul>
 				</section>
 
 				<section class="box special">
 					<h4 style="text-align: left; color: #FFC500;">Summary</h4>
 					<div class="scrollnavitem" id="showcase"></div>
-					<p style="text-align: left; margin-bottom: 0px;">This system continuously projects the static environment near the player onto a texture using top-down orthographic projection. That texture then serves as the basis for rendering accurate map topology (e.g. height data) and is dynamically culled in an HLSL shader based on the minimap's current radius relative to the player's world position. The much smaller minimap then translates its 0-1 UV coordinates to the unculled region of the full environment texture, ensuring correct scale and orientation on the HUD, while also adjusting the position and scale of any other sprites placed within the minimap context.</p>
+					<p style="text-align: left; margin-bottom: 0px;">This system continuously projects the static environment near the player onto a texture using top-down orthographic projection. As a form of optimization, the environment is only re-rendered when the player moves beyond the bounds of the previously rendered area or toggles the minimap zoom level lerp. That texture then serves as the basis for rendering accurate map topology (e.g. height data) and is dynamically culled in an HLSL shader based on the minimap's current radius relative to the player's world position. The much smaller minimap then translates its 0-1 UV coordinates to the unculled region of the full environment texture, ensuring correct scale and orientation on the HUD, while also adjusting the position and scale of any other sprites placed within the minimap context.</p>
 				</section>
 
 				<section class="box special">
@@ -96,14 +96,14 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Max Radius Minimap in a Small World</h5>
-							<span class="image featured" style="width: auto; display: contents;"><img src="images/MaxRadiusMinimap.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Environment texture rescaled in runtime according to a max radius set to 100 metres</h5>
+							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapMaxRadius.jpg" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Minimum Radius Minimap in a Small World</h5>
-							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinRadiusMinimap.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
+							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Environment texture rescaled in runtime according to a minimum radius set to 50 metres</h5>
+							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapMinRadius.jpg" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
@@ -134,7 +134,7 @@
 
 				<section class="box special">
 					<ul class="actions special" style="margin-bottom: 0;">
-						<li><a href="https://github.com/theanilsson/Dynamic-Minimap-Generation-via-World-LOD-Grid" target="_blank" class="button alt" style="display: flex;">View the implementation on GitHub<p class="fab fa-github" style="margin: 0 0 0 0.5em; font-size: xx-large; display: flex; align-self: anchor-center;"></p></a></li>
+						<li><a href="https://github.com/theanilsson/Dynamically-Generated-and-UV-Mapped-Minimap" target="_blank" class="button alt" style="display: flex;">View the implementation on GitHub<p class="fab fa-github" style="margin: 0 0 0 0.5em; font-size: xx-large; display: flex; align-self: anchor-center;"></p></a></li>
 					</ul>
 				</section>
 			</section>
