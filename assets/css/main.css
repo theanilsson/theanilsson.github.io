@@ -147,7 +147,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #FFF;
+		color: #fcfcfc;
 		font-weight: 300;
 		line-height: 1em;
 		margin: 0 0 0.5em 0;
@@ -2913,7 +2913,7 @@
 		background-color: #666;
 		border-radius: 6px;
 		border: 0;
-		color: #ffffff;
+		color: #fcfcfc;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: 400;
@@ -3377,7 +3377,7 @@
 		}
 
 		#banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
-			color: #FFF;
+			color: #fcfcfc;
 		}
 
 		#banner h2 {
