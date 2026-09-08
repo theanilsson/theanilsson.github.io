@@ -48,8 +48,8 @@
 				<section id="banner">
 					<h2 style="text-shadow: #000000 0 0 15px;">Thea Nilsson</h2>
 					<p style="margin-bottom: 0.05em; text-shadow: #000000 0 0 5px;">Midlevel Generalist Game Programmer</p>
-					<h5 style="color: #FF7FE8; text-shadow: #000000 0 0 10px;">Primarily focused on Gameplay, AI, UI, and Rendering</h5>
-					<div style="margin-top: 1em; padding: 1em 1.5em 1em 1.5em; background-color: #5e3cbd55; width: auto; justify-self: center; border-radius: 6px;"><p style="color: #00c925; margin-bottom: 0.25em; text-shadow: #000000 0 0 10px;">Seeking new employment</p></div>
+					<h5 style="color: #e776d3; text-shadow: #000000 0 0 10px;">Primarily focused on Gameplay, AI, UI, and Rendering</h5>
+					<div style="margin-top: 1.5em; padding: 1em 1.5em 1em 1.5em; background-color: #57124c; width: auto; justify-self: center; border-radius: 6px;"><p style="color: #dfdfdf; margin-bottom: 0.25em; text-shadow: #000000 0 0 10px;">Seeking new employment</p></div>
 				</section>
 
 				<!-- Scrollmenu -->
@@ -68,7 +68,7 @@
 				<section id="main" class="container" style="padding-top: 1em; padding-bottom: 0em;">
 					<section class="box special" style="padding: 2em 0 2em 0;">
 						<header class="major" style="padding: 0;">
-							<h2 style="color: #FFC500;">Diablo 3 Inspired Enemy AI System</h2>
+							<h2 style="color: #ffae13;">Diablo 3 Inspired Enemy AI System</h2>
 						</header>
 						<span class="image featured" style="width: auto; display: contents;"><img src="images/EnemySystemShowcase.gif" alt="" style="width: -webkit-fill-available; justify-self: center; margin: 1.5em 0 2em 0; border-top: #ffffff50 1px solid; border-bottom: #ffffff50 1px solid;"/></span>
 
@@ -79,13 +79,13 @@
 					</section>
 
 					<section class="box special">
-						<h4 style="text-align: left; color: #FFC500;">Summary</h4>
+						<h4 style="text-align: left; color: #ffae13;">Summary</h4>
 						<div class="scrollnavitem" id="scope"></div>
 						<p style="text-align: left; margin-bottom: 0px;">A lot of the time in games, enemies will work independently of one another, not taking into account what's happening with the others when deciding what they themselves want to do. In Diablo 3 that is often not the case. They have shamans that raise their dead allies to fight again, big bulky mobs that buff their allies with an aura and various enemies making joint attacks with one another using tethers and other means to perform stronger attacks together than they could alone. Recreating that type of behavior, making elite versions of enemies and generally making polished (atleast from the player's PoV) enemy behavior that works similarly to that in Diablo were some of the requirements in one of our group projects. I was tasked with single handedly programming the enemies for our game, so from those requirements, and from the large task I had ahead of me, the system I highlight on this page was born.</p>
 					</section>
 
 					<section class="box special">
-						<h4 style="text-align: left; color: #FFC500;">A Low Scope for a Short Timeframe</h4>
+						<h4 style="text-align: left; color: #ffae13;">A Low Scope for a Short Timeframe</h4>
 						<p style="text-align: left; margin-bottom: 1em;">From the very beginning, our group recognized the immense workload required to meet the project's requirement specification. This meant making sacrifices in both quality and the time we could dedicate to each component in order to meet the deadline. Us programmers all understood that trade-offs were inevitable and that the code we produced wouldn't necessarily reflect our full capabilities. The others knew they would have to spend less time than they would have liked on aspects such as the player controller and particle systems. Similarly, I knew I wouldn't have much opportunity to iterate on the enemy system. It had to function reasonably well in the first iteration, with any subsequent refinements focusing on polishing and optimizing what was already in place rather than making major changes.</p>
 						<div class="scrollnavitem" id="behavior"></div>
 						<p style="text-align: left; margin-bottom: 0px;">In an ideal scenario I would have had the time to implement a full fledged <b class="highlightedtext">behavior tree</b> for each enemy type. Or at the very least I could have made a more proper implementation of a <b class="highlightedtext">decision tree</b>. I could have polished their attacking behavior to be less simplistic. Used more <b class="highlightedtext">pushing logic using our Observer pattern</b> (a form of Event-Driven Architecture) instead of polling logic as I ended up doing in most places. Spent more time <b class="highlightedtext">optimizing the code and making it easier to read</b>. But regardless of what could have been, I'm still very proud of the end result and what I managed to produce in only a couple of weeks, managing to meet the deadline and produce a set of enemies interacting with one another in a very similar fashion as in Diablo.</p>
@@ -94,12 +94,12 @@
 					<section class="box special">
 						<div class="row">
 							<div class="col-12">
-								<h4 style="text-align: left; color: #FFC500;">Examples of the Cooperative Behavior</h4>
+								<h4 style="text-align: left; color: #ffae13;">Examples of the Cooperative Behavior</h4>
 							</div>
 						</div>
 						<div class="row" style="padding-bottom: 1em;">
 							<div class="col-8">								
-								<h5 style="text-align: left; font-size: 1.1em; color: #FF7FE8; margin: 0 0 0.25em 0;">Zombie</h5>
+								<h5 style="text-align: left; font-size: 1.1em; color: #e776d3; margin: 0 0 0.25em 0;">Zombie</h5>
 								<p style="text-align: justify; margin-bottom: 0px;">A small melee enemy, weak in both health and damage, meant to swarm the player in great numbers to make up for their frailty. Zombies receive a buff to their movement speed when combat starts if they're grouped together with a Crusader enemy.</p>
 							</div>
 							<div class="col-4">
@@ -114,7 +114,7 @@
 						</div>
 						<div class="row" style="padding-bottom: 1em;">
 							<div class="col-8">
-								<h5 style="text-align: left; font-size: 1.1em; color: #FF7FE8; margin: 0 0 0.25em 0;">Caster</h5>
+								<h5 style="text-align: left; font-size: 1.1em; color: #e776d3; margin: 0 0 0.25em 0;">Caster</h5>
 								<p style="text-align: justify; margin-bottom: 0px;">The only enemy type with ranged capability. The Casters launch magical projectiles at the player from a distance, making use of the other enemy types as barriers between the Caster and the player. If all the other enemies in their group are defeated, they start attacking more frantically and try to run away from the player when not attacking.</p>
 							</div>
 							<div class="col-4">
@@ -129,7 +129,7 @@
 						</div>
 						<div class="row" style="padding-bottom: 1em;">
 							<div class="col-8">
-								<h5 style="text-align: left; font-size: 1.1em; color: #FF7FE8; margin: 0 0 0.25em 0;">Crusader</h5>
+								<h5 style="text-align: left; font-size: 1.1em; color: #e776d3; margin: 0 0 0.25em 0;">Crusader</h5>
 								<p style="text-align: justify; margin-bottom: 0px;">A bulky melee enemy with a lot of damage and health. Crusaders are the leaders of the enemy types, buffing the Zombies and charging in to stand in the way of the player when they try to chase after Casters.</p>
 							</div>
 							<div class="col-4">
@@ -148,12 +148,12 @@
 					<section class="box special">
 						<div class="row">
 							<div class="col-12">
-								<h4 style="text-align: left; color: #FFC500;">The Algorithms, Models and Patterns</h4>
+								<h4 style="text-align: left; color: #ffae13;">The Algorithms, Models and Patterns</h4>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">Decision Tree Model</h5>
+								<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.25em 0; margin-bottom: 0;">Decision Tree Model</h5>
 								<p style="text-align: left; margin-bottom: 1em;">Each enemy type operates based on a loosely defined variation of the decision tree behavioral model. My implementation structures these decision trees as cascading if statements, with specialized conditions tailored to each enemy type's intended behavior. The image below showcases a portion of the easiest-to-read of the three decision trees, that of the Caster enemy type. Every frame, the Caster evaluates its state, first determining high-level conditions such as whether it has been alerted. Nested within that evaluation, it then decides the precise action to take, such as fleeing, turning toward the player, chasing after the player, or recalculating its pathfinding.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Decision tree behavior.png" alt="" style="width: -webkit-fill-available; max-width: 900px; justify-self: center; padding: 0 0 0 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 								<a class="highlightpageanchor2" href="https://github.com/theanilsson/ARPG-Enemy-AI-System/blob/main/code/RangedEnemy.cpp#L101" target="_blank">Go to the snippet on GitHub</a>
@@ -161,14 +161,14 @@
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.25em 0; margin-bottom: 0;">Object Pooling Pattern</h5>
+								<h5 style="text-align: left; color: #e776d3; padding: 3em 0 0.25em 0; margin-bottom: 0;">Object Pooling Pattern</h5>
 								<p style="text-align: left; margin-bottom: 1em;">Ranged enemies leverage an object pooling system for their projectiles, maintaining a pool of <b class="highlightedtext">pre-instantiated objects to optimize performance</b>. This approach <b class="highlightedtext">minimizes runtime memory allocations</b> and <b class="highlightedtext">garbage collection overhead</b> by reusing projectiles instead of dynamically creating and destroying them during gameplay. This object pool implementation was co-written with another programmer on my team, Hugo Nyberg.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Enemy object pooling.png" alt="" style="width: -webkit-fill-available; max-width: 931px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.25em 0; margin-bottom: 0;">Factory Pattern</h5>
+								<h5 style="text-align: left; color: #e776d3; padding: 3em 0 0.25em 0; margin-bottom: 0;">Factory Pattern</h5>
 								<p style="text-align: left; margin-bottom: 1em;">Our game employs the factory design pattern to <b class="highlightedtext">encapsulate</b> enemy creation, ensuring the level loading logic interacts only with an <b class="highlightedtext">abstract interface</b>. This promotes <b class="highlightedtext">loose coupling</b>, allowing subclasses to initialize specialized data independently.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Enemy factory pattern.png" alt="" style="width: -webkit-fill-available; max-width: 647px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 								<a class="highlightpageanchor2" href="https://github.com/theanilsson/ARPG-Enemy-AI-System/blob/main/code/EnemyFactory.h" target="_blank">Go to the snippet on GitHub</a>
@@ -176,7 +176,7 @@
 						</div>
 						<div class="row">
 							<div class="col-12">
-								<div class="hover_img hover_img_link" style="width: fit-content;"><a href="pathfinding.html" class="highlightpageanchor"><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin: 3em 0 0 0;">A-Star Pathfinding and Funneling 🔗</h5><span><img src="images/PathfindingShowcase.gif" alt="image" style="height: 15em;" /></span></a></div>
+								<div class="hover_img hover_img_link" style="width: fit-content;"><a href="pathfinding.html" class="highlightpageanchor"><h5 style="text-align: left; color: #e776d3; padding: 0 0 0.25em 0; margin: 3em 0 0 0;">A-Star Pathfinding and Funneling 🔗</h5><span><img src="images/PathfindingShowcase.gif" alt="image" style="height: 15em;" /></span></a></div>
 								<p style="text-align: left; margin-bottom: 1em;">The enemies all navigate the game world using an A-Star pathfinding algorithm that I wrote, along with an accompanying funneling algorithm to smooth out the found path. I wrote my initial implementation for pathfinding in 2D, so for this project <b class="highlightedtext">I had to convert it to work in 3D</b>. Essentially all that entailed was exchanging the Y axis for the Z axis in the actual pathfinding logic, and only using the Y axis to sample the height of the elevation that's being traversed.</p>
 								<span class="image featured" style="width: auto; display: contents;"><img src="images/Enemy pathfinding.png" alt="" style="width: -webkit-fill-available; max-width: 1144px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 								<a class="highlightpageanchor2" href="https://github.com/theanilsson/ARPG-Enemy-AI-System/blob/main/code/Enemy.cpp#L294" target="_blank">Go to the snippet on GitHub</a>
@@ -202,8 +202,8 @@
 						</li>
 					</ul>
 					<ul style="list-style-type: none;">
-						<li style="margin-bottom: 1em; color: #FF7FE8; font-size: 0.8em;">This website was designed & developed by Thea Nilsson using only HTML & CSS</li>
-						<li style="color: #FF7FE8; font-size: 0.8em;">The initial website framework was based on a template by <a style="border-bottom: none; font-size: inherit;" class="highlightpageanchor2" href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+						<li style="margin-bottom: 1em; color: #e776d3; font-size: 0.8em;">This website was designed & developed by Thea Nilsson using only HTML & CSS</li>
+						<li style="color: #e776d3; font-size: 0.8em;">The initial website framework was based on a template by <a style="border-bottom: none; font-size: inherit;" class="highlightpageanchor2" href="http://html5up.net" target="_blank">HTML5 UP</a></li>
 					</ul>
 				</footer>
 

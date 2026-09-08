@@ -48,8 +48,8 @@
 				<section id="banner">
 					<h2 style="text-shadow: #000000 0 0 15px;">Thea Nilsson</h2>
 					<p style="margin-bottom: 0.05em; text-shadow: #000000 0 0 5px;">Midlevel Generalist Game Programmer</p>
-					<h5 style="color: #FF7FE8; text-shadow: #000000 0 0 10px;">Primarily focused on Gameplay, AI, UI, and Rendering</h5>
-					<div style="margin-top: 1em; padding: 1em 1.5em 1em 1.5em; background-color: #5e3cbd55; width: auto; justify-self: center; border-radius: 6px;"><p style="color: #00c925; margin-bottom: 0.25em; text-shadow: #000000 0 0 10px;">Seeking new employment</p></div>
+					<h5 style="color: #e776d3; text-shadow: #000000 0 0 10px;">Primarily focused on Gameplay, AI, UI, and Rendering</h5>
+					<div style="margin-top: 1.5em; padding: 1em 1.5em 1em 1.5em; background-color: #57124c; width: auto; justify-self: center; border-radius: 6px;"><p style="color: #dfdfdf; margin-bottom: 0.25em; text-shadow: #000000 0 0 10px;">Seeking new employment</p></div>
 				</section>
 
 				<!-- Scrollmenu -->
@@ -69,7 +69,7 @@
 			<section id="main" class="container" style="padding-top: 1em; padding-bottom: 0em;">
 				<section class="box special" style="padding: 2em 0 2em 0;">
 					<header class="major" style="padding: 0;">
-						<h2 style="color: #FFC500;">A-Star NavMesh Pathfinding and Funneling</h2>
+						<h2 style="color: #ffae13;">A-Star NavMesh Pathfinding and Funneling</h2>
 					</header>
 					<span class="image featured" style="width: auto; display: contents;"><img src="images/PathfindingShowcase.gif" alt="" style="width: -webkit-fill-available; justify-self: center; margin: 1.5em 0 2em 0; border-top: #ffffff50 1px solid; border-bottom: #ffffff50 1px solid;"/></span>
 
@@ -80,13 +80,13 @@
 				</section>
 
 				<section class="box special">
-					<h4 style="text-align: left; color: #FFC500;">Summary</h4>
+					<h4 style="text-align: left; color: #ffae13;">Summary</h4>
 					<div class="scrollnavitem" id="background"></div>
 					<p style="text-align: left; margin-bottom: 0;">NavMesh, short for navigation mesh, is a non-rendered object in a game world composed entirely of convex polygons (closed 2D shapes with three or more outward-pointing sides). These polygons are connected by shared edges, forming a mesh that enables the calculation of viable paths between two points. This system is primarily used to help AI-controlled (or indirectly player-controlled) characters navigate the environment. NavMesh pathfinding is a core component in many modern games, with the A-Star algorithm being one of the most popular and efficient methods for determining these paths. Once a viable path has been found, regardless which algorithm was used to find it, a smoothing algorithm (in this case funneling) is needed to make the path both more efficient and better looking. This is because pathfinding algorithms usually only find the shortest path via centerpoints of polygons, not the actual shortest path between the start and end points. An actor wandering centerpoint to centerpoint would not only look strange doing so, but also take far longer to get to its goal than it needed to.</p>
 				</section>
 
 				<section class="box special">
-					<h4 style="text-align: left; color: #FFC500;">From Curiosity to Requirement</h4>
+					<h4 style="text-align: left; color: #ffae13;">From Curiosity to Requirement</h4>
 					<p style="text-align: left; margin-bottom: 1em;">During the spring of my first year at TGA we had a course called "Datastructures and Algorithms", where one of the assignments was to implement a pathfinding algorithm usable on both NavMeshes and 2D grids. Even though the initial version I made as part of that assignment was very unoptimized and had no smoothing algorithm to speak of, the assignment sparked a curiosity in me regarding game AI as a broader field and especially the algorithms that drive intelligent behavior. That curiosity stayed with me, pushing me to explore pathfinding more deeply and refine my skills outside the classroom.</p>
 					<p style="text-align: left; margin-bottom: 1em;">During the summer, with some extra free time on my hands, I revisited the project and challenged myself to implement a basic smoothing algorithm. My first attempt was rudimentary, relying on midpoints between triangle centerpoints to create smoother paths, but it served its purpose as a proof of concept. However, once I started using that version in a larger project, I quickly realized it couldn't be used for more than a few actors at a time without bogging down performance. It was full of inefficient memory allocations and unnecessary loops over large collections. Around the same time, I also found out that an efficient smoothing algorithm would be a requirement in a later group project. With a new sense of urgency, I committed myself to reworking the entire system. Over the course of a week, I iterated repeatedly on the pathfinding logic and rewrote the smoothing algorithm from the ground up. The result, as seen on this page, was a far more efficient and scalable solution, one that could meet the performance needs of more demanding projects.</p>
 					<div class="scrollnavitem" id="astar"></div>
@@ -96,7 +96,7 @@
 				<section class="box special">
 					<div class="row">
 						<div class="col-12">
-							<h4 style="text-align: left; color: #FFC500;">A-Star pathfinding</h4>
+							<h4 style="text-align: left; color: #ffae13;">A-Star pathfinding</h4>
 						</div>
 					</div>
 					<div class="row">
@@ -120,7 +120,7 @@
 				<section class="box special">
 					<div class="row">
 						<div class="col-12">
-							<h4 style="text-align: left; color: #FFC500;">Funneling the Found Path</h4>
+							<h4 style="text-align: left; color: #ffae13;">Funneling the Found Path</h4>
 						</div>
 					</div>
 					<div class="row">
@@ -140,19 +140,19 @@
 				<section class="box special">
 					<div class="row">
 						<div class="col-12">
-							<h4 style="text-align: left; color: #FFC500;">Used in Projects</h4>
+							<h4 style="text-align: left; color: #ffae13;">Used in Projects</h4>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin-bottom: 0.25em;">The First Version Used on a 2D Grid</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0 0; margin-bottom: 0.25em;">The First Version Used on a 2D Grid</h5>
 							<p style="text-align: left; margin-bottom: 0.5em;">I used my initial unoptimized version (which lacked path smoothing) for the enemies in our 4th group project (Carl Off Duty).</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Grid pathfinding.gif" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 2em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin-bottom: 0.25em;">The Optimized and Funneled Version Converted to Work in 3D and used on a NavMesh</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0 0; margin-bottom: 0.25em;">The Optimized and Funneled Version Converted to Work in 3D and used on a NavMesh</h5>
 							<p style="text-align: left; margin-bottom: 0.5em;">In our 6th group project (Order of the Roses), I used the new and improved version for the enemies as well as for the player's point-and-click movement. It was also used for the enemies in our 7th group project (Blacksite: Deep Horizon).</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Pathfinding P6.gif" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 0 0;"/></span>
 						</div>
@@ -177,8 +177,8 @@
 						</li>
 					</ul>
 					<ul style="list-style-type: none;">
-						<li style="margin-bottom: 1em; color: #FF7FE8; font-size: 0.8em;">This website was designed & developed by Thea Nilsson using only HTML & CSS</li>
-						<li style="color: #FF7FE8; font-size: 0.8em;">The initial website framework was based on a template by <a style="border-bottom: none; font-size: inherit;" class="highlightpageanchor2" href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+						<li style="margin-bottom: 1em; color: #e776d3; font-size: 0.8em;">This website was designed & developed by Thea Nilsson using only HTML & CSS</li>
+						<li style="color: #e776d3; font-size: 0.8em;">The initial website framework was based on a template by <a style="border-bottom: none; font-size: inherit;" class="highlightpageanchor2" href="http://html5up.net" target="_blank">HTML5 UP</a></li>
 					</ul>
 				</footer>
 

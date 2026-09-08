@@ -48,8 +48,8 @@
 				<section id="banner">
 					<h2 style="text-shadow: #000000 0 0 15px;">Thea Nilsson</h2>
 					<p style="margin-bottom: 0.05em; text-shadow: #000000 0 0 5px;">Midlevel Generalist Game Programmer</p>
-					<h5 style="color: #FF7FE8; text-shadow: #000000 0 0 10px;">Primarily focused on Gameplay, AI, UI, and Rendering</h5>
-					<div style="margin-top: 1em; padding: 1em 1.5em 1em 1.5em; background-color: #5e3cbd55; width: auto; justify-self: center; border-radius: 6px;"><p style="color: #00c925; margin-bottom: 0.25em; text-shadow: #000000 0 0 10px;">Seeking new employment</p></div>
+					<h5 style="color: #e776d3; text-shadow: #000000 0 0 10px;">Primarily focused on Gameplay, AI, UI, and Rendering</h5>
+					<div style="margin-top: 1.5em; padding: 1em 1.5em 1em 1.5em; background-color: #57124c; width: auto; justify-self: center; border-radius: 6px;"><p style="color: #dfdfdf; margin-bottom: 0.25em; text-shadow: #000000 0 0 10px;">Seeking new employment</p></div>
 				</section>
 
 				<!-- Scrollmenu -->
@@ -66,7 +66,7 @@
 			<section id="main" class="container" style="padding-top: 1em; padding-bottom: 0em;">
 				<section class="box special" style="padding: 2em 0 2em 0;">
 					<header class="major" style="padding: 0;">
-						<h2 style="color: #FFC500;">Dynamically Generated and UV Mapped Minimap</h2>
+						<h2 style="color: #ffae13;">Dynamically Generated and UV Mapped Minimap</h2>
 					</header>
 					<video style="width: -webkit-fill-available; height: auto; margin: 1.5em 0 2em 0;" controls autoplay loop muted preload="auto"><source src="images/MinimapShowcase.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 
@@ -77,58 +77,58 @@
 				</section>
 
 				<section class="box special">
-					<h4 style="text-align: left; color: #FFC500;">Summary</h4>
+					<h4 style="text-align: left; color: #ffae13;">Summary</h4>
 					<div class="scrollnavitem" id="showcase"></div>
 					<p style="text-align: left; margin-bottom: 0px;">This system continuously projects the static environment near the player onto a texture using top-down orthographic projection. As a form of optimization, the environment is only re-rendered when the player moves beyond the bounds of the previously rendered area or toggles the minimap zoom level lerp. That texture then serves as the basis for rendering accurate map topology (e.g. height data) and is dynamically culled in an HLSL shader based on the minimap's current radius relative to the player's world position. The much smaller minimap then translates its 0-1 UV coordinates to the unculled region of the full environment texture, ensuring correct scale and orientation on the HUD, while also adjusting the position and scale of any other sprites placed within the minimap context.</p>
 				</section>
 
 				<section class="box special">
-					<h4 style="text-align: left; color: #FFC500;">Showcase</h4>
+					<h4 style="text-align: left; color: #ffae13;">Showcase</h4>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Topology Rendering and Culling Shader</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Topology Rendering and Culling Shader</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/CullingShaderSnippet.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Minimap UV Translating Shader</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Minimap UV Translating Shader</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapSpriteShaderSnippet.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Environment texture rescaled in runtime according to a maximum radius set to 100 metres</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Environment texture rescaled in runtime according to a maximum radius set to 100 metres</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapMaxRadius.jpg" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Environment texture rescaled in runtime according to a minimum radius set to 50 metres</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Environment texture rescaled in runtime according to a minimum radius set to 50 metres</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapMinRadius.jpg" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Minimap Setup</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Minimap Setup</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapCalculationSnippet.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Rendering the Geometry</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Rendering the Geometry</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapGeometryRender.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Culling the Rendered Geometry</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Culling the Rendered Geometry</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapCullingRender.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Final Sprite Render With Runtime UV Mapping</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Final Sprite Render With Runtime UV Mapping</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/MinimapSpriteRender.png" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 0 0;"/></span>
 						</div>
 					</div>
@@ -152,8 +152,8 @@
 						</li>
 					</ul>
 					<ul style="list-style-type: none;">
-						<li style="margin-bottom: 1em; color: #FF7FE8; font-size: 0.8em;">This website was designed & developed by Thea Nilsson using only HTML & CSS</li>
-						<li style="color: #FF7FE8; font-size: 0.8em;">The initial website framework was based on a template by <a style="border-bottom: none; font-size: inherit;" class="highlightpageanchor2" href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+						<li style="margin-bottom: 1em; color: #e776d3; font-size: 0.8em;">This website was designed & developed by Thea Nilsson using only HTML & CSS</li>
+						<li style="color: #e776d3; font-size: 0.8em;">The initial website framework was based on a template by <a style="border-bottom: none; font-size: inherit;" class="highlightpageanchor2" href="http://html5up.net" target="_blank">HTML5 UP</a></li>
 					</ul>
 				</footer>
 

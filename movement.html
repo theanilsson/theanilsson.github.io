@@ -48,8 +48,8 @@
 				<section id="banner">
 					<h2 style="text-shadow: #000000 0 0 15px;">Thea Nilsson</h2>
 					<p style="margin-bottom: 0.05em; text-shadow: #000000 0 0 5px;">Midlevel Generalist Game Programmer</p>
-					<h5 style="color: #FF7FE8; text-shadow: #000000 0 0 10px;">Primarily focused on Gameplay, AI, UI, and Rendering</h5>
-					<div style="margin-top: 1em; padding: 1em 1.5em 1em 1.5em; background-color: #5e3cbd55; width: auto; justify-self: center; border-radius: 6px;"><p style="color: #00c925; margin-bottom: 0.25em; text-shadow: #000000 0 0 10px;">Seeking new employment</p></div>
+					<h5 style="color: #e776d3; text-shadow: #000000 0 0 10px;">Primarily focused on Gameplay, AI, UI, and Rendering</h5>
+					<div style="margin-top: 1.5em; padding: 1em 1.5em 1em 1.5em; background-color: #57124c; width: auto; justify-self: center; border-radius: 6px;"><p style="color: #dfdfdf; margin-bottom: 0.25em; text-shadow: #000000 0 0 10px;">Seeking new employment</p></div>
 				</section>
 
 				<!-- Scrollmenu -->
@@ -68,7 +68,7 @@
 			<section id="main" class="container" style="padding-top: 1em; padding-bottom: 0em;">
 				<section class="box special" style="padding: 2em 0 2em 0;">
 					<header class="major" style="padding: 0;">
-						<h2 style="color: #FFC500;">Advanced PhysX Based FPS Movement</h2>
+						<h2 style="color: #ffae13;">Advanced PhysX Based FPS Movement</h2>
 					</header>
 					<span class="image featured" style="width: auto; display: contents;"><img src="images/FpsMovement_SlingSurfSlideSling.gif" alt="" style="width: -webkit-fill-available; justify-self: center; margin: 1.5em 0 2em 0; border-top: #ffffff50 1px solid; border-bottom: #ffffff50 1px solid;"/></span>
 
@@ -79,45 +79,45 @@
 				</section>
 
 				<section class="box special">
-					<h4 style="text-align: left; color: #FFC500;">Summary</h4>
+					<h4 style="text-align: left; color: #ffae13;">Summary</h4>
 					<p style="text-align: left; margin-bottom: 1em;">In our 7th group project at TGA we were tasked with developing an FPS and my team and I settled on the Frontier Defense game mode in Titanfall 2 as our reference game. Our choice in reference game made me very excited since a large portion of the code from Titanfall 2 was ported over to make Apex Legends, one of my all time favorite online games. I have hundreds of hours in Apex and a large portion of those are from playing the character called Pathfinder, whose signature ability is functionally the same grappling hook that players have access to in Titanfall 2.</p>
 					<div class="scrollnavitem" id="grapplinghook"></div>
 					<p style="text-align: left; margin-bottom: 0px;">After some discussion about what each of us wanted to focus on in this project, my fellow programmers graciously allowed me to take on the task of single handedly developing the movement controller for our player character, including a grappling hook, momentum preserving ground slide, and more. Although the end result that I produced isn't a 1:1 recreation of the Titanfall movement, it's not all that far from it in my opinion. Given the scope of our project, the time frame I had to work with and sacrifices I had to make to have it better fit our game, I'm very happy with the result. I also feel that, with more time, I could continue working on the movement to make it even closer to Titanfall's movement.</p>
 				</section>
 
 				<section class="box special">
-					<h4 style="text-align: left; color: #FFC500;">The Grappling Hook</h4>
+					<h4 style="text-align: left; color: #ffae13;">The Grappling Hook</h4>
 					<div class="row">
 						<div class="col-12">
-							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin: 0 0 0.25em 0;">Pull Direction and Strength Calculations 🔍</h5><span><img src="images/FpsMovement_CornerSwingSlide.gif" alt="image" style="height: 15em;" /></span></a></div>
+							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #e776d3; padding: 0 0 0 0; margin: 0 0 0.25em 0;">Pull Direction and Strength Calculations 🔍</h5><span><img src="images/FpsMovement_CornerSwingSlide.gif" alt="image" style="height: 15em;" /></span></a></div>
 							<p style="text-align: left; margin-bottom: 1em;">To emulate the slingshot moves that are possible in Titanfall, my grappling hook takes the current velocity into account as an additive factor to keep pulling the player slightly in the direction that they're already moving instead of straight toward the grapple point.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Pull calculations.png" alt="" style="width: -webkit-fill-available; max-width: 1040px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.25em 0; margin-bottom: 0;">Spring Dampening</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 3em 0 0.25em 0; margin-bottom: 0;">Spring Dampening</h5>
 							<p style="text-align: left; margin-bottom: 1em;">A completely stiff grappling line wouldn't feel very rope-like, so I added some springiness to my grappling hook to make it feel like a rope tugging at you, instead of just a force of gravity pulling you in.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Spring dampening.png" alt="" style="width: -webkit-fill-available; max-width: 786px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin: 3em 0 0.25em 0;">Rope Swing 🔍</h5><span><img src="images/FpsMovement_SwingUp.gif" alt="image" style="height: 15em;" /></span></a></div>
+							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #e776d3; padding: 0 0 0 0; margin: 3em 0 0.25em 0;">Rope Swing 🔍</h5><span><img src="images/FpsMovement_SwingUp.gif" alt="image" style="height: 15em;" /></span></a></div>
 							<p style="text-align: left; margin-bottom: 1em;">In a similar vein to the additive velocity factor when calculating direction, this part of the force calculation exists to help the slingshot functionality emerge. It does so by calculating your tangential velocity (the speed of an object undergoing circular motion) along the pull direction, basically to make it pull you in less when you aren't already moving in the same direction that it's trying to pull you in.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Rope swing.png" alt="" style="width: -webkit-fill-available; max-width: 896px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.25em 0; margin-bottom: 0;">Fighting the Pull Force</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 3em 0 0.25em 0; margin-bottom: 0;">Fighting the Pull Force</h5>
 							<p style="text-align: left; margin-bottom: 1em;">To give the player further control of how the swing of the grappling hook ends up I also allow a small amount of directional movement during the grapple, added onto the rest of the calculation results into the PhysX body.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Fighting the pull force.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.25em 0; margin-bottom: 0;">Snapping Conditions</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 3em 0 0.25em 0; margin-bottom: 0;">Snapping Conditions</h5>
 							<p style="text-align: left; margin-bottom: 1em;">Finally I have two main conditions deciding whether to automatically end the grappling, "snapping the line" so to say. One is the player being close to the grappling point, either from having been pulled there over time or by grappling somewhere right next to themselves. The other is that the player has a large velocity away from the grapple point after the grapple forces have already been applied for three fourths of a second, at that point we can assume they are doing a slingshot maneuver of some kind.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Snapping conditions.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<div class="scrollnavitem" id="movement"></div>
@@ -127,17 +127,17 @@
 				</section>
 
 				<section class="box special">
-					<h4 style="text-align: left; color: #FFC500;">The Rest of the Movement</h4>
+					<h4 style="text-align: left; color: #ffae13;">The Rest of the Movement</h4>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.25em 0; margin-bottom: 0;">Input Mapping</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.25em 0; margin-bottom: 0;">Input Mapping</h5>
 							<p style="text-align: left; margin-bottom: 1em;">To accommodate both mouse and keyboard as well as gamepads to play our game I leveraged the Command design pattern, encapsulating what triggers certain actions to be controlled by a separate interface from the player controller itself. This also meant that I had to make the movement equal between input given by an omnidirectional joystick and the more limited combinations of cardinal directional inputs possible using the WASD keys.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Input Mapping.png" alt="" style="width: -webkit-fill-available; max-width: 601px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.25em 0; margin-bottom: 0;">Grounded Check</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 3em 0 0.25em 0; margin-bottom: 0;">Grounded Check</h5>
 							<p style="text-align: left; margin-bottom: 1em;">The grounded check is a simple raycast in the PhysX Scene, casting only against the collision filter/layer of environment objects. If there is a collider on the environment layer right under the player's feet at their center of mass, they count as grounded and I store the normal of the intersected object at the ray's hit point for use in later calculations.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Grounded check.png" alt="" style="width: -webkit-fill-available; max-width: 895px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Advanced-PhysX-Based-FPS-Movement/blob/main/code/Player.cpp#L569" target="_blank">Go to the function on GitHub</a>
@@ -145,7 +145,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.25em 0; margin-bottom: 0;">Grounded Movement</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 3em 0 0.25em 0; margin-bottom: 0;">Grounded Movement</h5>
 							<p style="text-align: left; margin-bottom: 1em;">The movement on the ground is calculated as a speed scalar multiplied by the directional input from the Input Mapper, using a different scalar based on if the player is sprinting or walking.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Grounded movement.png" alt="" style="width: -webkit-fill-available; max-width: 895px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Advanced-PhysX-Based-FPS-Movement/blob/main/code/Player.cpp#L725" target="_blank">Go to the function on GitHub</a>
@@ -153,7 +153,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.25em 0; margin-bottom: 0;">Ground Slide Boost</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 3em 0 0.25em 0; margin-bottom: 0;">Ground Slide Boost</h5>
 							<p style="text-align: left; margin-bottom: 1em;">At the start of a ground slide I apply a small boost to give the player some extra momentum and to incentivize using all the movement mechanics at their disposal over and over.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Groundslide boost.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Advanced-PhysX-Based-FPS-Movement/blob/main/code/Player.cpp#L763" target="_blank">Go to the function on GitHub</a>
@@ -161,7 +161,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.25em 0; margin-bottom: 0;">Custom Friction</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 3em 0 0.25em 0; margin-bottom: 0;">Custom Friction</h5>
 							<p style="text-align: left; margin-bottom: 1em;">The custom friction was both a solution necessary for the scope of our project and a key component of the ground slide mechanic. The scope of our project simply didn't allow for any time allocated to going around configuring various specialized physics materials to use on surfaces in our level to fit the player controller. It was much easier for our scope to just remove friction from all environment objects and delegate that responsibility to the player controller. When ground sliding, the custom friction preserves most of the current momentum dependent on the surface normal of the object under the player's feet. When walking or sprinting, the custom friction instead acts as a catch-all "slow down slightly after the player lets go of their movement input" surface material, along with some extra force to counteract sliding on slopes. In a larger scope, all these components could be adapted to be different based on the name/tag of the PhysX body that was hit by the IsGrounded raycast.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Grounded friction.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Advanced-PhysX-Based-FPS-Movement/blob/main/code/Player.cpp#L695" target="_blank">Go to the function on GitHub</a>
@@ -169,7 +169,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.25em 0; margin-bottom: 0;">Mid-Air Control</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 3em 0 0.25em 0; margin-bottom: 0;">Mid-Air Control</h5>
 							<p style="text-align: left; margin-bottom: 1em;">The player is allowed a small amount of directional input control while airborne, fighting against their current velocity to try to change the direction they're headed. Our level designers asked me to give the player more "surf" capability like in counter strike games, so the if statement (at the end of the function) checking against the dot product of steep slopes under the player's feet allows for a little bit of extra air control to allow more of a surf-like behavior.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Mid Air Movement.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Advanced-PhysX-Based-FPS-Movement/blob/main/code/Player.cpp#L771" target="_blank">Go to the function on GitHub</a>
@@ -177,7 +177,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0 0; margin: 3em 0 0.25em 0;">Slingshot Jump 🔍</h5><span><img src="images/FpsMovement_SlingSlideJumpy.gif" alt="image" style="height: 15em;" /></span></a></div>
+							<div class="hover_img" style="width: fit-content;"><a><h5 style="text-align: left; color: #e776d3; padding: 0 0 0 0; margin: 3em 0 0.25em 0;">Slingshot Jump 🔍</h5><span><img src="images/FpsMovement_SlingSlideJumpy.gif" alt="image" style="height: 15em;" /></span></a></div>
 							<p style="text-align: left; margin-bottom: 1em;">To enable slingshot jumps like those possible when hooking the ground with the Titanfall grappling hook, I simply check if the player is grounded while grappling and launch them at a great velocity upwards along the Y-axis whilst preserving their velocity along the other axes.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Grappling jump.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<a class="highlightpageanchor2" href="https://github.com/theanilsson/Advanced-PhysX-Based-FPS-Movement/blob/main/code/Player.cpp#L689" target="_blank">Go to the function on GitHub</a>
@@ -185,7 +185,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 3em 0 0.25em 0; margin-bottom: 0;">Double Jump</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 3em 0 0.25em 0; margin-bottom: 0;">Double Jump</h5>
 							<p style="text-align: left; margin-bottom: 1em;">Just like in Titanfall, our game has a double jump, and my double jump feels very similar to theirs in my opinion, fighting against any current downwards velocity to act more like an air jet shooting down to lift you rather than just kinematic movement (movement without regard for current forces acting on an object in motion) pushing you upwards.</p>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/Double jumping.png" alt="" style="width: -webkit-fill-available; max-width: 1100px; justify-self: center; padding: 0; border: 1px solid #fcfcfc50; border-radius: 2px;"/></span>
 							<div class="scrollnavitem" id="highlight"></div>
@@ -195,28 +195,28 @@
 				</section>
 				
 				<section class="box special">
-					<h4 style="text-align: left; color: #FFC500;">Highlight Reels</h4>
-					<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Traversing between defense points using the grappling hook</h5>
+					<h4 style="text-align: left; color: #ffae13;">Highlight Reels</h4>
+					<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Traversing between defense points using the grappling hook</h5>
 					<video style="width: -webkit-fill-available; height: auto; padding: 0 0 3em 0;" controls><source src="images/FPS Movement Grappling Highlight Reel.mp4" type="video/mp4">Your browser does not support the video tag.</video>
-					<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Various slingshot jump moves</h5>
+					<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Various slingshot jump moves</h5>
 					<video style="width: -webkit-fill-available; height: auto; padding: 0 0 3em 0;" controls><source src="images/FPS Movement Slingshot Highlight Reel.mp4" type="video/mp4">Your browser does not support the video tag.</video>
 					<div class="row">
 						<div class="col-6">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Using slingshot momentum to parkour</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Using slingshot momentum to parkour</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/FpsMovement_SlingSlideJumpy.gif" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 						<div class="col-6">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Ground hook slingshot into b-hop</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Ground hook slingshot into b-hop</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/FpsMovement_GroundSlingBhop.gif" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 3em 0;"/></span>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-6">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Swing force slingshot</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Swing force slingshot</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/FpsMovement_CornerSwingSlide.gif" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 0 0;"/></span>
 						</div>
 						<div class="col-6">
-							<h5 style="text-align: left; color: #FF7FE8; padding: 0 0 0.5em 0; margin-bottom: 0;">Smooth swing-up to scale elevation</h5>
+							<h5 style="text-align: left; color: #e776d3; padding: 0 0 0.5em 0; margin-bottom: 0;">Smooth swing-up to scale elevation</h5>
 							<span class="image featured" style="width: auto; display: contents;"><img src="images/FpsMovement_SwingUp.gif" alt="" style="width: -webkit-fill-available; justify-self: center; padding: 0 0 0 0;"/></span>
 						</div>
 					</div>
@@ -240,8 +240,8 @@
 						</li>
 					</ul>
 					<ul style="list-style-type: none;">
-						<li style="margin-bottom: 1em; color: #FF7FE8; font-size: 0.8em;">This website was designed & developed by Thea Nilsson using only HTML & CSS</li>
-						<li style="color: #FF7FE8; font-size: 0.8em;">The initial website framework was based on a template by <a style="border-bottom: none; font-size: inherit;" class="highlightpageanchor2" href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+						<li style="margin-bottom: 1em; color: #e776d3; font-size: 0.8em;">This website was designed & developed by Thea Nilsson using only HTML & CSS</li>
+						<li style="color: #e776d3; font-size: 0.8em;">The initial website framework was based on a template by <a style="border-bottom: none; font-size: inherit;" class="highlightpageanchor2" href="http://html5up.net" target="_blank">HTML5 UP</a></li>
 					</ul>
 				</footer>
 

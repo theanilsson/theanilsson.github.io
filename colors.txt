@@ -1,41 +1,28 @@
-Dark purple
-#231B3B
+# Current:
+Dark purple - #231b3b
+Medium purple - #462d8a
+Plum pink - #57124c
+Bright pink - #e776d3
+Yellow - #ffae13
+Pure black - #000 or #000000
+Dark Grey - #3f3f3f
+Pure white - #fff or #ffffff
+Off white 1 - #fcfcfc
+Off white 2 - #dfdfdf
+Off white 2 - #cfcfcf
 
-Medium purple
-#5e3cbd
 
-Light purple
-#8051FF
+# Old/Unused:
+Medium purple - #5e3cbd
+Light purple - #8051ff
+Yellow - #ffc500
+Pink - #ff7fe8
+Teal - #72FFFF
 
-Yellow
-#FFC500
 
-White
-#FFF
-
-Off White
-#cfcfcf
-
-Pink
-#FF7FE8
-
-Teal
-#72FFFF
-
-Dark Grey
-#3f3f3f
-
-P6
-v_fB_EsUTx8
-
-P4
-dsysSd-BKZ8
-
-P3
-tAvcn48JpxI
-
-P2
-6KKlmaAZol8
-
-P1
-Tj5ddOqnJds
+# YT endings:
+P6 - v_fB_EsUTx8
+P4 - dsysSd-BKZ8
+P3 - tAvcn48JpxI
+P2 - 6KKlmaAZol8
+P1 - Tj5ddOqnJds
